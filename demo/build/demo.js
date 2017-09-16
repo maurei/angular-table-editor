@@ -10215,12 +10215,14 @@ class tableEditorDirective {
             if (action == 'up' || action == 'down') { // Moving up or down by arrow up or down;
                 action = (action == 'up' ? '--' : "++");
                 let nextRowIdx = rowIdx;
-                eval('nextRowIdx' + action);
-                if ($scope.$tableEditorCtrl.$rows.length - 1 < nextRowIdx || nextRowIdx < 0) {
-                    nextCellCtrl = null;
-                } else {
-                    const ensureMatch = true
-                    nextCellCtrl = $scope.$tableEditorCtrl.$rows[nextRowIdx].$$getNextCell(cellIdx, ensureMatch)
+                while (nextCellCtrl === undefined){ // Looping to prevent getting stuck on fully disabled but registered targetrows
+                    eval('nextRowIdx' + action);
+                    if ($scope.$tableEditorCtrl.$rows.length - 1 < nextRowIdx || nextRowIdx < 0) { // border of table: exit editor mode
+                        nextCellCtrl = null;
+                    } else {
+                        const ensureMatch = true
+                        nextCellCtrl = $scope.$tableEditorCtrl.$rows[nextRowIdx].$$getNextCell(cellIdx, ensureMatch)
+                    }
                 }
             }
         }
