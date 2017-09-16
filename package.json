@@ -37,7 +37,7 @@
   "readme": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/not_yet.git"
+    "url": "https://github.com/maurei/angular-table-editor"
   },
   "scripts": {
     "build": "webpack --env build",
@@ -46,5 +46,5 @@
     "build-demo": "cd ./demo && npm install",
     "demo": "http-server ./demo/build -a localhost -p 8000"
   },
-  "version": "0.0.1-beta.0.0.7"
+  "version": "0.0.1-beta.0.0.8"
 }
