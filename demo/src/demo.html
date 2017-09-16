@@ -1,0 +1,52 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand"><h3>ngTableEditor</h3></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" ui-sref="demo">Getting Started</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="demo.api-documentation">API Documentation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="demo.basic">Basic</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="demo.advanced">Advanced</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="demo.validations">With Validations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="demo.customization">With Customization</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="demo.non-trivial">Non Trivial</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container" ui-view>
+    <div class="jumbotron">
+        <h1>ngTableEditor</h1>
+        <p class="lead"> A fully tested, lightweight AngularJS library that transform dull HTML tables into dynamic editable components.</p>
+        <a class="btn btn-lg btn-primary" href="#" role="button">Download</a>
+    </div>
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-block">
+            <p class="card-text"><code>{{$ctrl.tableData}}</code></p>
+        </div>
+    </div>
+</div>

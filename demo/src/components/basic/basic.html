@@ -1,0 +1,270 @@
+
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">Minimal Example</h4>
+        <h6 class="card-subtitle mb-2 text-muted">The most minimal set-up</h6>
+        <p class="card-text">An example using only the basic directives <code>table-editor</code>, <code>te-row</code> and <code>te-cell</code> </p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example1 == "example"}' href ng-click='$ctrl.mode.example1 = "example"'>Example</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example1 == "html"}' href ng-click='$ctrl.mode.example1 = "html"'>HTML</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example1 == "js"}' href ng-click='$ctrl.mode.example1 = "js"'>JS</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-block" ng-show='$ctrl.mode.example1 == "example"'>
+        <table class='table' table-editor>
+            <thead>
+                <tr>
+                    <th>Given</th>
+                    <th>Family</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Birthday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr te-row ng-repeat='row in $ctrl.data'>
+                    <td te-cell ng-model="row.givenName"></td>
+                    <td te-cell ng-model="row.familyName"></td>
+                    <td te-cell ng-model="row.email"></td>
+                    <td te-cell ng-model="row.company"></td>
+                    <td te-cell ng-model="row.birthday"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-block" hljs ng-show='$ctrl.mode.example1 == "html"'>
+<table class='table' table-editor>
+    <thead>
+        <th>Given</th>
+        <th>Family</th>
+        <th>Email</th>
+        <th>Company</th>
+        <th>Birthday</th>
+    </thead>
+    <tbody>
+        <tr te-row ng-repeat='row in $ctrl.data'>
+            <td te-cell ng-model="row.givenName"></td>
+            <td te-cell ng-model="row.familyName"></td>
+            <td te-cell ng-model="row.email"></td>
+            <td te-cell ng-model="row.company"></td>
+            <td te-cell ng-model="row.birthday"></td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+    <div class="card-block" hljs hljs-no-escape ng-show='$ctrl.mode.example1 == "js"'>
+const basicComponent = {
+    bindings: {
+        data: '<',
+    },
+    templateUrl: templateUrl,
+    controller: class {
+
+        constructor($scope){
+
+        }
+    }
+}
+    </div>
+</div>
+<!-- 
+
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">HTML5 Date and Disabled Cells</h4>
+        <h6 class="card-subtitle mb-2 text-muted">A bit of common configuration</h6>
+        <p class="card-text">An example demonstrating how certain fields can be made static while others remain editable, and showing how to use the supported HTML5 date type. The additional directives used are <code>te-cell-active</code> and  <code>te-cell-options</code> </p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example2 == "example"}' href ng-click='$ctrl.mode.example2 = "example"; $event.preventDefault()'>Example</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example2 == "html"}' href ng-click='$ctrl.mode.example2 = "html"'>HTML</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example2 == "js"}' href ng-click='$ctrl.mode.example2 = "js"'>JS</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-block" ng-show='$ctrl.mode.example2 == "example"'>
+        <table class='table' table-editor="disabled-cells">
+            <thead>
+                <tr>
+                    <th>Given</th>
+                    <th>Family</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Birthday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr te-row ng-repeat='row in $ctrl.secondExample' ng-class="{disabled: row.givenName == 'Fleur'}">
+                    <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.givenName"></td>
+                    <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.familyName"></td>
+                    <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.email"></td>
+                    <td te-cell te-cell-active='false' ng-model="row.company" class='disabled'></td>
+                    <td te-cell te-cell-active='row.givenName != "Fleur"' te-cell-options='{"inputAttributes": {"type": "date"}}' ng-model="row.birthday"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-block" hljs ng-show='$ctrl.mode.example2 == "html"'>
+<table class='table' table-editor>
+    <thead>
+        <tr>
+            <th>Given</th>
+            <th>Family</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Birthday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr te-row ng-repeat='row in $ctrl.data' ng-class="{disabled: row.givenName == 'Fleur'}">
+            <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.givenName"></td>
+            <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.familyName"></td>
+            <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.email"></td>
+            <td te-cell te-cell-active='false' ng-model="row.company" class='disabled'></td>
+            <td te-cell te-cell-active='row.givenName != "Fleur"' te-cell-options='{inputAttributes: {type: 'date'}}' ng-model="row.birthday"></td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+    <div class="card-block" hljs hljs-no-escape ng-show='$ctrl.mode.example2 == "js"'>
+const basicComponent = {
+    bindings: {
+        data: '<',
+    },
+    templateUrl: templateUrl,
+    controller: class {
+
+        constructor($scope){
+
+        }
+
+        $onInit{
+            this.data = this.data.map( row = {
+                row.birthday = new Date(row.birthday)
+                return row
+            })
+        }
+    }
+}
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">teRowChange Callback Example</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Consuming data when switching rows</h6>
+        <p class="card-text">An example demonstrating how to use the <code>te-row-change</code> directive on the <code>table</code> element. Note that it requires the <code>te-row-context</code> directive on <code>tr</code> elements.</p>
+    </div>
+</div>
+<div class="card" style='margin-bottom:4em'>
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example3 == "example"}' href ng-click='$ctrl.mode.example3 = "example"; $event.preventDefault()'>Example</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example3 == "html"}' href ng-click='$ctrl.mode.example3 = "html"'>HTML</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example3 == "js"}' href ng-click='$ctrl.mode.example3 = "js"'>JS</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-block" ng-show='$ctrl.mode.example3 == "example"'>
+        <table class='table' table-editor='advanced-example-two' te-row-change='$ctrl.rowChangeHandler(args)'>
+            <thead>
+                <tr>
+                    <th>Given</th>
+                    <th>Family</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                </tr>
+                    <th>Birthday</th>
+            </thead>
+            <tbody>
+                <tr te-row te-row-context='{row: row, random: $ctrl.randomNumber() }' ng-repeat='row in $ctrl.thirdExample'>
+                    <td te-cell ng-model="row.givenName"></td>
+                    <td te-cell ng-model="row.familyName"></td>
+                    <td te-cell ng-model="row.email"></td>
+                    <td te-cell ng-model="row.company"></td>
+                    <td te-cell ng-model="row.birthday"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class='row text-center'>
+            <div class='col-12'><b>Check out the developers console to see the logged callbacks arguments!</b></div>
+        </div>
+    </div>
+    <div class="card-block" hljs ng-show='$ctrl.mode.example3 == "html"'>
+<table class='table' table-editor te-row-change='$ctrl.rowChangeHandler(args)'>
+    <thead>
+        <tr>
+            <th>Given</th>
+            <th>Family</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Birthday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr te-row te-row-context='{row: row, random: 123 }' ng-repeat='row in $ctrl.data'>
+            <td te-cell ng-model="row.givenName"></td>
+            <td te-cell ng-model="row.familyName"></td>
+            <td te-cell ng-model="row.email"></td>
+            <td te-cell ng-model="row.company"></td>
+            <td te-cell ng-model="row.birthday"></td>
+        </tr>
+    </tbody>
+</table>
+<div class='row'>
+    <div class='col-2'><code>te-row-change</code>: </div>
+    <div class='col-10'><code>{{$ctrl.rowChange}}</code></div>
+</div>
+    </div>
+    <div class="card-block" hljs hljs-no-escape ng-show='$ctrl.mode.example3 == "js"'>
+const basicComponent = {
+    bindings: {
+        data: '<',
+    },
+    templateUrl: templateUrl,
+    controller: class {
+
+        constructor($scope){
+            this.rowChange = {};
+        }
+
+        rowChangeHandler(args){
+            console.info('rowChangeHandler fired')
+            console.info(args)
+        }
+
+        randomNumber(){
+            return Math.random();
+        }
+    }
+}
+    </div>
+</div>
+
+
+
+
+ -->

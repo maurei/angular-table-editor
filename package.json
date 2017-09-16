@@ -1,0 +1,49 @@
+{
+  "author": {
+    "name": "Maurits Moeys"
+  },
+  "bugs": {
+    "url": "https://www.maurits.amsterdam"
+  },
+  "dependencies": {},
+  "description": "Angular Table Editor",
+  "devDependencies": {
+    "@rbarilani/remove-source-map-url-webpack-plugin": "0.1.0-alpha",
+    "babel-cli": "6.24.1",
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "7.0.0",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-preset-latest": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "eslint": "3.19.0",
+    "eslint-loader": "1.7.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-loader": "^0.4.5",
+    "ngtemplate-loader": "^1.3.1",
+    "node-sass": "^4.5.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.4.1"
+  },
+  "homepage": "https://www.maurits.amsterdam",
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/angular-table-editor.js",
+  "name": "angular-table-editor",
+  "optionalDependencies": {},
+  "readme": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/not_yet.git"
+  },
+  "scripts": {
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "dev-withdemo": "cd ./demo && webpack --config ./webpack-dev.config.js --progress --colors --watch --env dev & http-server ./demo/build -a localhost -p 8000",
+    "build-demo": "cd ./demo && npm install && webpack",
+    "demo": "http-server ./demo/build -a localhost -p 8000"
+  },
+  "version": "0.0.1-beta.0.0.7"
+}

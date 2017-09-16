@@ -1,0 +1,82 @@
+
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">Autocomplete example</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Using a modified version of <a href='https://github.com/zensh/ui-autocomplete'>zensh/ui-autocomplete</a></h6>
+        <p class="card-text">An example using the <code>te-catcomplete</code>  directive applied to the <i>company</i> column. </p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example1 == "example"}' href ng-click='$ctrl.mode.example1 = "example"'>Example</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example1 == "html"}' href ng-click='$ctrl.mode.example1 = "html"'>HTML</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class='{"active": $ctrl.mode.example1 == "js"}' href ng-click='$ctrl.mode.example1 = "js"'>JS</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-block" ng-if='$ctrl.mode.example1 == "example"'>
+        <table class='table' table-editor>
+            <thead>
+                <tr>
+                    <th>Given</th>
+                    <th>Family</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Birthday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr te-row ng-repeat='row in $ctrl.data'>
+                    <td te-cell ng-model="row.givenName"></td>
+                    <td te-cell ng-model="row.familyName"></td>
+                    <td te-cell ng-model="row.email"></td>
+                    <td te-cell ng-model="row.company" te-catcomplete='$ctrl.companyList'></td> 
+                    <td te-cell ng-model="row.birthday"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-block" hljs ng-if='$ctrl.mode.example1 == "html"'>
+<table class='table' table-editor>
+    <thead>
+        <th>Given</th>
+        <th>Family</th>
+        <th>Email</th>
+        <th>Company</th>
+        <th>Birthday</th>
+    </thead>
+    <tbody>
+        <tr te-row ng-repeat='row in $ctrl.data'>
+            <td te-cell ng-model="row.givenName"></td>
+            <td te-cell ng-model="row.familyName"></td>
+            <td te-cell ng-model="row.email"></td>
+            <td te-cell ng-model="row.company"></td>
+            <td te-cell ng-model="row.birthday"></td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+    <div class="card-block" hljs hljs-no-escape ng-if='$ctrl.mode.example1 == "js"'>
+const basicComponent = {
+    bindings: {
+        data: '<',
+    },
+    templateUrl: templateUrl,
+    controller: class {
+
+        constructor($scope){
+
+        }
+    }
+}
+    </div>
+</div>
+
+
+

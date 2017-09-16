@@ -1,0 +1,73 @@
+body {
+    background-color: #ecf0f1;
+}
+
+nav.navbar {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.jumbotron {
+    margin-top: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.jumbotron,
+.card {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+input {
+    position: absolute;
+    font: inherit;
+}
+
+.card {
+    margin-top: 2em;
+}
+
+td {
+    box-sizing: content-box;
+}
+
+tr td:nth-child(1),
+tr th:nth-child(1) {
+    width: 9.8039%;
+    text-align: left;
+}
+
+tr td:nth-child(2),
+tr th:nth-child(2) {
+    width: 9.8039%;
+    text-align: left;
+}
+
+tr td:nth-child(3),
+tr th:nth-child(3) {
+    width: 39.2156%;
+    text-align: left;
+}
+
+tr td:nth-child(4),
+tr th:nth-child(4) {
+    width: 24.5098%;
+    text-align: left;
+}
+
+tr td:nth-child(5),
+tr th:nth-child(5) {
+    width: 16.6666%;
+    text-align: left;
+}
