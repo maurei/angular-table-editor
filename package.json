@@ -20,6 +20,7 @@
     "eslint-loader": "1.7.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-loader": "^0.4.5",
+    "http-server": "^0.10.0",
     "ngtemplate-loader": "^1.3.1",
     "node-sass": "^4.5.2",
     "raw-loader": "^0.5.1",
@@ -42,7 +43,7 @@
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
     "dev-withdemo": "cd ./demo && webpack --config ./webpack-dev.config.js --progress --colors --watch --env dev & http-server ./demo/build -a localhost -p 8000",
-    "build-demo": "cd ./demo && npm install && webpack",
+    "build-demo": "cd ./demo && npm install",
     "demo": "http-server ./demo/build -a localhost -p 8000"
   },
   "version": "0.0.1-beta.0.0.7"
