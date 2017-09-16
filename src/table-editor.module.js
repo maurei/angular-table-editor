@@ -8,7 +8,7 @@ import teCellDirective from './table-editor-cell.directive';
 import teCatcomplete from './te-catcomplete/te-catcomplete.module'
 
 export default angular
-    .module('mrei.ngTableEditor', [
+    .module('ngTableEditor', [
       teCatcomplete
     ])
     .provider('tableEditor', tableEditorProvider)

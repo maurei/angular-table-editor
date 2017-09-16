@@ -22,7 +22,6 @@ class teRowDirective {
             element.removeAttr('te-row-context');
             return
         }
-
         let context;
         if ($scope.teRowContext) {
             if (typeof($scope.teRowContext) != 'object') throw new Error('teRowContext must have an object or array bound to it, got a ' + typeof($scope.teRowContext) + ' instead.')
