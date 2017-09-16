@@ -17,12 +17,12 @@
     <script type='text/javascript' src='lib/angular-table-editor.js'></script>
     ```
 
-Or if you're using a precompiler, download via npm
-```
-$ npm install angular-table-editor --save-dev
-```
+    Or if you're using a precompiler, download via npm
+    ```
+    $ npm install angular-table-editor --save-dev
+    ```
 
-and import the library in your javascript
+    and import the library in your javascript
 
     ```js
     import ngTableEditor from 'angular-table-editor'
