@@ -18,8 +18,8 @@ const basicComponent = {
         }
 
         rowChangeHandler(args) {
-            // console.info('rowChangeHandler fired')
-            // console.info(args)
+            console.info('rowChangeHandler fired')
+            console.info(args)
         }
 
         $onInit() {
@@ -31,7 +31,7 @@ const basicComponent = {
         }
 
         randomNumber(){
-            // return Math.random();
+            return Math.random();
         }
     }
 }

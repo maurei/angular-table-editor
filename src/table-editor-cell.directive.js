@@ -137,8 +137,8 @@ class teCellDirective {
     }
 
     _instantiate($scope, element, teRowController) {
-        $ctrl = $scope.$ctrl;
-        $$inputify = $ctrl.$$inputify;
+        const $ctrl = $scope.$ctrl;
+        const $$inputify = $ctrl.$$inputify;
 
         teRowController.$$registerCellToggle($ctrl)
         $scope.$$teCellSearchUnregisterFn = $scope.$on('$teCellSearch', function(event, targetElement, callbackFn){
@@ -151,8 +151,8 @@ class teCellDirective {
 
 
     _dispose($scope, element, attributes, teRowController) {
-        $ctrl = $scope.$ctrl;
-        $$cellify = $ctrl.$$cellify;
+        const $ctrl = $scope.$ctrl;
+        const $$cellify = $ctrl.$$cellify;
 
         teRowController.$$registerCellToggle($ctrl)
         if ($scope.$$teCellSearchUnregisterFn) $scope.$$teCellSearchUnregisterFn();

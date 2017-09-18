@@ -3,7 +3,7 @@
     <div class="card-block">
         <h4 class="card-title">Minimal Example</h4>
         <h6 class="card-subtitle mb-2 text-muted">The most minimal set-up</h6>
-        <p class="card-text">An example using only the basic directives <code>table-editor</code>, <code>te-row</code> and <code>te-cell</code>. Use <strong>tab</strong>, <strong>shift-tab</strong>, <strong>arrow up</strong> and <strong>arrow down</strong> keys to navigate through the table.</p>
+        <p class="card-text">An example using only the basic directives <code>table-editor</code>, <code>te-row</code> and <code>te-cell</code>. Click a row in the table to start editing, then use the <strong>tab</strong>, <strong>shift-tab</strong>, <strong>arrow up</strong> and <strong>arrow down</strong> keys to navigate through the table.</p>
     </div>
 </div>
 <div class="card">
@@ -70,19 +70,17 @@ const basicComponent = {
     templateUrl: templateUrl,
     controller: class {
 
-        constructor($scope){
-
-        }
+        constructor(){}
     }
 }
     </div>
 </div>
-<!-- 
+
 <div class="card">
     <div class="card-block">
         <h4 class="card-title">HTML5 Date and Disabled Cells</h4>
         <h6 class="card-subtitle mb-2 text-muted">A bit of common configuration</h6>
-        <p class="card-text">An example demonstrating how certain fields can be made static while others remain editable, and showing how to use the supported HTML5 date type. The additional directives used are <code>te-cell-active</code> and  <code>te-cell-options</code> </p>
+        <p class="card-text">An example demonstrating how certain fields can be made static while others remain editable, and showing how to use the supported HTML5 date type. The additional directives used are <code>te-cell-active</code> and  <code>te-cell-options</code>. In this example, the third row is picked out by programmatically setting <code>te-cell-active</code> to <code>false</code> by checking for <code>row.givenName != 'fleur'</code>, and the entire Company column is disabled by hardcoding the same directive to <code>false</code>. For the HTML5 Date support only works when providing <code>ng-model</code> with a <code>Date</code> object, as shown in the JavaScript.</p>
     </div>
 </div>
 <div class="card">
@@ -151,9 +149,7 @@ const basicComponent = {
     templateUrl: templateUrl,
     controller: class {
 
-        constructor($scope){
-
-        }
+        constructor(){}
 
         $onInit{
             this.data = this.data.map( row = {
@@ -165,12 +161,13 @@ const basicComponent = {
 }
     </div>
 </div>
-<!-- 
+
+
 <div class="card">
     <div class="card-block">
         <h4 class="card-title">teRowChange Callback Example</h4>
-        <h6 class="card-subtitle mb-2 text-muted">Consuming data when switching rows</h6>
-        <p class="card-text">An example demonstrating how to use the <code>te-row-change</code> directive on the <code>table</code> element. Note that it requires the <code>te-row-context</code> directive on <code>tr</code> elements.</p>
+        <h6 class="card-subtitle mb-2 text-muted">Handling data when involved when switching rows</h6>
+        <p class="card-text">An example demonstrating how to use the <code>te-row-change</code> directive on the <code>tr</code> element. Note that it requires the <code>te-row-context</code> directive on <code>tr</code> elements. Select a row to go into editor mode, then navigate through the table using the (shift-) tab, arrow up and arrow down keys. Open te developers console to see the callback.</p>
     </div>
 </div>
 <div class="card" style='margin-bottom:4em'>
@@ -195,8 +192,8 @@ const basicComponent = {
                     <th>Family</th>
                     <th>Email</th>
                     <th>Company</th>
-                </tr>
                     <th>Birthday</th>
+                </tr>
             </thead>
             <tbody>
                 <tr te-row te-row-context='{row: row, random: $ctrl.randomNumber() }' ng-repeat='row in $ctrl.thirdExample'>
@@ -209,7 +206,7 @@ const basicComponent = {
             </tbody>
         </table>
         <div class='row text-center'>
-            <div class='col-12'><b>Check out the developers console to see the logged callbacks arguments!</b></div>
+            <div class='col-12'><b>Check out the developers console to see the arguments of the callback being logged</b></div>
         </div>
     </div>
     <div class="card-block" hljs ng-show='$ctrl.mode.example3 == "html"'>
@@ -224,7 +221,7 @@ const basicComponent = {
         </tr>
     </thead>
     <tbody>
-        <tr te-row te-row-context='{row: row, random: 123 }' ng-repeat='row in $ctrl.data'>
+        <tr te-row te-row-context='{row: row, random: $ctrl.randomNumber() }' ng-repeat='row in $ctrl.data'>
             <td te-cell ng-model="row.givenName"></td>
             <td te-cell ng-model="row.familyName"></td>
             <td te-cell ng-model="row.email"></td>
@@ -233,10 +230,6 @@ const basicComponent = {
         </tr>
     </tbody>
 </table>
-<div class='row'>
-    <div class='col-2'><code>te-row-change</code>: </div>
-    <div class='col-10'><code>{{$ctrl.rowChange}}</code></div>
-</div>
     </div>
     <div class="card-block" hljs hljs-no-escape ng-show='$ctrl.mode.example3 == "js"'>
 const basicComponent = {
@@ -246,9 +239,7 @@ const basicComponent = {
     templateUrl: templateUrl,
     controller: class {
 
-        constructor($scope){
-            this.rowChange = {};
-        }
+        constructor(){}
 
         rowChangeHandler(args){
             console.info('rowChangeHandler fired')
@@ -266,4 +257,3 @@ const basicComponent = {
 
 
 
- -->

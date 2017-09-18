@@ -1,7 +1,7 @@
 class teRowDirective {
     constructor() {
         this.restrict = "A";
-        this.scope = { teRow: '<', teRowContext: '<' };
+        this.scope = { teRow: '<', teRowContext: '&?' };
         this.require = { '$tableEditorCtrl': '^tableEditor' }
         this.controllerAs = '$teRowCtrl'
         const pre = this.pre.bind(this)
@@ -24,15 +24,16 @@ class teRowDirective {
         }
         let context;
         if ($scope.teRowContext) {
-            if (typeof($scope.teRowContext) != 'object') throw new Error('teRowContext must have an object or array bound to it, got a ' + typeof($scope.teRowContext) + ' instead.')
-            context = Array.prototype.concat.apply([], [$scope.teRowContext]);
-            if (context.length) context[0].$teRowCtrl = $scope.$teRowCtrl;
+            context = $scope.teRowContext();
+            if (typeof(context) != 'object') throw new Error('teRowContext must have an object or array bound to it, got a ' + typeof(context) + ' instead.')
+            if (context.row) context.row.$teRowCtrl = $scope.$teRowCtrl;
+            context.$teRowCtrl = $scope.$teRowCtrl;
         }
 
         $scope.$teRowCtrl.$trigger = () => {
             $tableEditorCtrl.$$trigger($scope.$teRowCtrl)
         }
-        $scope.$teRowCtrl.$$teRowContext = context || [$scope.$teRowCtrl]
+        $scope.$teRowCtrl.$$teRowContext = context || {$teRowCtrl: $scope.$teRowCtrl }
         $scope.$on('$destroy', () => { 
             $tableEditorCtrl.$$registerRowToggle($scope.$teRowCtrl) 
         })
