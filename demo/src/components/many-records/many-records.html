@@ -1,0 +1,39 @@
+
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">Many records</h4>
+        <h6 class="card-subtitle mb-2 text-muted">A performance test. Poke around with the memory profiler</h6>
+        <p class="card-text">Contains 160+ records (more than you should probably ever display on a single page)</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" class='active'>Example</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-block">
+        <table class='table' table-editor>
+            <thead>
+                <tr>
+                    <th>Given</th>
+                    <th>Family</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Birthday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr te-row ng-repeat='row in $ctrl.data'>
+                    <td te-cell ng-model="row.givenName"></td>
+                    <td te-cell ng-model="row.familyName"></td>
+                    <td te-cell ng-model="row.email"></td>
+                    <td te-cell ng-model="row.company"></td>
+                    <td te-cell ng-model="row.birthday"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

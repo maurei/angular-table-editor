@@ -66,6 +66,13 @@ basic td.disabled {
 basic tr.disabled {
   background-color: #ffdede;
   opacity: 0.4; }
+basic td.disabled {
+  background-color: #ffdede;
+  opacity: 0.4; }
+
+basic tr.disabled {
+  background-color: #ffdede;
+  opacity: 0.4; }
 .ui-autocomplete-category {
   font-weight: bold;
   padding: .2em .4em;

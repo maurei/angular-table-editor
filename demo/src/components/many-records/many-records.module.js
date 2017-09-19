@@ -1,26 +1,26 @@
 import angular from 'angular'
 import uiRouter from '@uirouter/angularjs';
-import basicComponent from './basic.component';
+import manyRecordsComponent from './many-records.component';
 import tableData from '../../data.js'
 
 
 export default angular
-    .module('te.basic', [
+    .module('demo.many-records', [
         uiRouter
     ])
-    .component('basic', basicComponent)
+    .component('manyRecords', manyRecordsComponent)
     .config(($stateProvider) => {
         $stateProvider
-            .state('demo.basic', {
+            .state('demo.many-records', {
                 views: {
                     '@demo': {
-                        template: '<basic data="$resolve.data"></basic>'
+                        template: '<many-records data="$resolve.data"></many-records>'
                     }
                 },
                 resolve: {
-                    data: ($q) => $q.when(tableData.splice(0,6))
+                    data: ($q) => $q.when(tableData)
                 },
-                url: 'basic',
+                url: 'many-records',
             })
     })
     .name

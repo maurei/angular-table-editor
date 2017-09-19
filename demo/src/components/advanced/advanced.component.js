@@ -15,14 +15,17 @@ const advancedComponent = {
         }
 
         $onInit() {
-
-            const categories = ["", "Tech", "Financial"];
+            const categories = ["", "Category X", "Category Y", "Category Z"];
+            let i = 0;
             class Company {
                 constructor(value, label) {
                     this.value = label;
                     this.label = label;
-                    this.category = categories[Math.floor(Math.random() * 3)]
-                    this.constructor.list.push(this)
+                    this.category = categories[i];
+                    if (i == 3){
+                        i = 0;
+                    } else { i++; }
+                    this.constructor.list.push(this);
                 }
             }
             Company.list = [];

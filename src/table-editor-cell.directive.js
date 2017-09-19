@@ -60,7 +60,7 @@ class teCellDirective {
         // $formatters: the label we're putting in must be on the catcomplete choice object on attribute "label".
         if ($scope.teCatcomplete) {
             ngModel.$parsers.push(val => {
-                return $scope.teCell
+                return $scope.$$childHead.teCell  // hijacking $parpers pipeline, see my answer to this SO question: https://stackoverflow.com/questions/35309114/set-model-value-programmatically-in-angular-js/44071623#44071623
             })
             ngModel.$formatters.push(tableEditor.viewValueFormatter.teCatcomplete)
         }
@@ -215,10 +215,11 @@ class teCellDirective {
 
         $scope.active = false;
         $$read($scope.$$childHead)
+        $scope.$$childHead.$destroy();
         element.empty();
         ngModel.$render()
         $$tableEditor.toCellStyle($$onLinkData, element)
-        $scope.$$childHead.$destroy();
+        
     }
 
 
@@ -230,12 +231,11 @@ class teCellDirective {
         inputElementScope.teCell = ngModel.$modelValue;
         inputElementScope.active = true
         inputElementScope.read = () => {inputElementScope.$evalAsync( () => { $$read(inputElementScope) })}
-        inputElementScope.teCatcomplete = $scope.teCatComplete;
-
-
+        
         const template = angular.element($$tableEditor.inputTemplate)
-
         if ($scope.teCatcomplete) template.attr('te-catcomplete', 'teCatcomplete');
+        inputElementScope.teCatcomplete = $scope.teCatcomplete;
+
 
         $ctrl.$$addAttrsTo(element);
         $$tableEditor.toInputStyle($scope.$ctrl.$$onLinkData, element, template)

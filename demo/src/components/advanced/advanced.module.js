@@ -18,7 +18,7 @@ export default angular
                     }
                 },
                 resolve: {
-                    data: ($q) => $q.when(tableData)
+                    data: ($q) => $q.when(tableData.splice(0,20))
                 },
                 url: 'advanced',
 
