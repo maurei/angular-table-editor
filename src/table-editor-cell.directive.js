@@ -4,11 +4,9 @@ class teCellDirective {
         this.scope = { teCell: '=', teCellActive: '&', teCellOptions: '<', 'teCatcomplete': '<', teCellValidate: '<' };
         this.require = ['^teRow', '?ngModel', 'teCell']
         this.controllerAs = '$ctrl'
-
         this._tableEditor = tableEditor
         this._$compile = $compile
         this._$timeout = $timeout
-
     }
 
     link($scope, element, attributes, controllersArr) {
