@@ -180,30 +180,6 @@ class teCatcompleteDirective {
         })
     }
 
-    // _changeNgModel(ngModelCtrl, data) {
-    //     if (angular.isObject(null)) { //always false <-- get rid of this crap
-    //         if (!ngModelCtrl.$viewValue && ngModelCtrl.$viewValue !== 0) {
-    //             this._emptyObj(ngModel);
-    //         } else if (data && data.item) {
-    //             data.item.label = angular.isObject(data.item.label) ? $('<div>').append(data.item.label).html() : data.item.label;
-    //             angular.extend(ngModel, data.item);
-    //         }
-    //         each(ngModelCtrl.$viewChangeListeners, function(listener) {
-    //             try {
-    //                 listener();
-    //             } catch (e) {
-    //                 $exceptionHandler(e);
-    //             }
-    //         });
-    //     }
-    // }
-    // _cleanNgModel(ngModelCtrl) {
-    //     alert('you actually just used this')
-    //     ngModelCtrl.$setViewValue('');
-    //     ngModelCtrl.$render();
-    //     // changeNgModel(ngModelCtrl);
-    // }
-
     // Make sure nothing bad is selected while typing, and autoselect match when there is just one
     _setNgModelValue(ngModelChoices, ngModelCtrl, $viewInput) {
         const oldModelValue = ngModelCtrl.$modelValue;
