@@ -80,7 +80,7 @@ const basicComponent = {
     <div class="card-block">
         <h4 class="card-title">HTML5 Date and Disabled Cells</h4>
         <h6 class="card-subtitle mb-2 text-muted">A bit of common configuration</h6>
-        <p class="card-text">An example demonstrating how certain fields can be made static while others remain editable, and showing how to use the supported HTML5 date type. The additional directives used are <code>te-cell-active</code> and  <code>te-cell-options</code>. In this example, the third row is picked out by programmatically setting <code>te-cell-active</code> to <code>false</code> by checking for <code>row.givenName != 'fleur'</code>, and the entire Company column is disabled by hardcoding the same directive to <code>false</code>. For the HTML5 Date support only works when providing <code>ng-model</code> with a <code>Date</code> object, as shown in the JavaScript.</p>
+        <p class="card-text">An example demonstrating how certain fields can be made static while others remain editable, and showing how to use the supported HTML5 date type. The additional directives used are <code>te-cell-active</code> and  <code>te-cell-options</code>. In this example, the third row is picked out by programmatically setting <code>te-cell-active</code> to <code>false</code> by checking for <code>row.givenName != 'Aloysius'</code>, and the entire Company column is disabled by hardcoding the same directive to <code>false</code>. For the HTML5 Date support only works when providing <code>ng-model</code> with a <code>Date</code> object, as shown in the JavaScript.</p>
     </div>
 </div>
 <div class="card">
@@ -109,12 +109,12 @@ const basicComponent = {
                 </tr>
             </thead>
             <tbody>
-                <tr te-row ng-repeat='row in $ctrl.secondExample' ng-class="{disabled: row.givenName == 'Fleur'}">
-                    <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.givenName"></td>
-                    <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.familyName"></td>
-                    <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.email"></td>
+                <tr te-row ng-repeat='row in $ctrl.secondExample' ng-class="{disabled: row.givenName == 'Aloysius'}">
+                    <td te-cell te-cell-active='row.givenName != "Aloysius"' ng-model="row.givenName"></td>
+                    <td te-cell te-cell-active='row.givenName != "Aloysius"' ng-model="row.familyName"></td>
+                    <td te-cell te-cell-active='row.givenName != "Aloysius"' ng-model="row.email"></td>
                     <td te-cell te-cell-active='false' ng-model="row.company" class='disabled'></td>
-                    <td te-cell te-cell-active='row.givenName != "Fleur"' te-cell-options='{"inputAttributes": {"type": "date"}}' ng-model="row.birthday"></td>
+                    <td te-cell te-cell-active='row.givenName != "Aloysius"' te-cell-options='{"inputAttributes": {"type": "date"}}' ng-model="row.birthday"></td>
                 </tr>
             </tbody>
         </table>
@@ -131,12 +131,12 @@ const basicComponent = {
         </tr>
     </thead>
     <tbody>
-        <tr te-row ng-repeat='row in $ctrl.data' ng-class="{disabled: row.givenName == 'Fleur'}">
-            <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.givenName"></td>
-            <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.familyName"></td>
-            <td te-cell te-cell-active='row.givenName != "Fleur"' ng-model="row.email"></td>
+        <tr te-row ng-repeat='row in $ctrl.data' ng-class="{disabled: row.givenName == 'Aloysius'}">
+            <td te-cell te-cell-active='row.givenName != "Aloysius"' ng-model="row.givenName"></td>
+            <td te-cell te-cell-active='row.givenName != "Aloysius"' ng-model="row.familyName"></td>
+            <td te-cell te-cell-active='row.givenName != "Aloysius"' ng-model="row.email"></td>
             <td te-cell te-cell-active='false' ng-model="row.company" class='disabled'></td>
-            <td te-cell te-cell-active='row.givenName != "Fleur"' te-cell-options='{inputAttributes: {type: 'date'}}' ng-model="row.birthday"></td>
+            <td te-cell te-cell-active='row.givenName != "Aloysius"' te-cell-options='{inputAttributes: {type: 'date'}}' ng-model="row.birthday"></td>
         </tr>
     </tbody>
 </table>
