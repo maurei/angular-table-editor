@@ -173,6 +173,8 @@ class teCatcompleteDirective {
             catcomplete.catcomplete('destroy')
             element.off();
             teCatcomplete.widget = null;
+            teCatcomplete.methods = null;
+            teCatcomplete.options.position = null
             delete $scope.teCatcomplete;
             element = null;
             tableEditor = null;
