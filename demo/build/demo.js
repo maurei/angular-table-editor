@@ -10604,8 +10604,8 @@ class teCellDirective {
         $ctrl.$$getTeRowCtrl = () => teRowController
         $ctrl.$$tableEditor = tableEditor;
         $ctrl.$$onLinkData = tableEditor.onLink(element);
-        $ctrl.$$addAttrsTo = () => this._addAttrsTo($scope, element)
-        $ctrl.$$read = (inputElementScope, init) => this._read(attributes, ngModel, viewValueFormatter, teRowController, $ctrl.$validate, inputElementScope, init)
+        $ctrl.$$addAttrsTo = (element) => this._addAttrsTo($scope, element)
+        $ctrl.$$read = (inputElementScope, init) => this._read($scope, attributes, ngModel, viewValueFormatter, teRowController, $ctrl.$validate, inputElementScope, init)
         $ctrl.$$cellify = () => this._cellify($scope, ngModel, element, $ctrl.$$read);
         $ctrl.$$inputify = () => this._inputify($scope, ngModel, element, $ctrl.$$read);
         $ctrl.$$dispose = () => this._dispose($scope, element, attributes, teRowController, $ctrl.$$cellify, $ctrl.$validate)
@@ -10689,7 +10689,7 @@ class teCellDirective {
 
 
     // Forms bridge between ngModel on the HTMLInputElement and the one within this directive. inputElementScope is refering to the $scope of the HTMLInputElement, ngModel is the controller living in this directive level
-    _read(attributes, ngModel, viewValueFormatter, teRowController, $validate, inputElementScope, init) {
+    _read($scope, attributes, ngModel, viewValueFormatter, teRowController, $validate, inputElementScope, init) {
         if (init != true) {
             if (inputElementScope.teCatcomplete) {
                 if (inputElementScope.teCell != undefined) ngModel.$setViewValue(inputElementScope.teCell.label);
@@ -10705,9 +10705,9 @@ class teCellDirective {
                 ngModel.$setViewValue(inputElementScope.teCell)
             }
         }
-        const key = attributes.name || inputElementScope.$id;
+        const key = attributes.name || $scope.$id;
         teRowController.$$setDirty(key, ngModel.$dirty);
-        if (inputElementScope.teCellValidate) $validate();
+        if ($scope.teCellValidate) $validate();
     }
 
     _validate($scope, attributes, ngModel, teRowController) {
@@ -10747,10 +10747,12 @@ class teCellDirective {
         inputElementScope.teCatcomplete = $scope.teCatcomplete;
 
 
-        $ctrl.$$addAttrsTo(element);
+        
         $$tableEditor.toInputStyle($scope.$ctrl.$$onLinkData, element, template)
 
+        $ctrl.$$addAttrsTo(template);
         const compiledHtml = this._$compile(template)(inputElementScope);
+
         this._$timeout().then(() => {
             element.empty();
             element.append(compiledHtml);
@@ -11024,7 +11026,6 @@ class tableEditorDirective {
 
             if (!timeout) timeout = $timeout().then(() => {
                 this.$$initMode = false;
-                console.log('timeout done')
             });
 
             if (this.$$initMode) { // first time we're registering rows, just push everything in there, order should be correct by default.
@@ -11528,7 +11529,7 @@ class teCatcompleteDirective {
         tableEditor = tableEditor();
         if (tableEditor.constructor.name != "TableEditor") tableEditor = tableEditor(element.parents('[table-editor]').first().attr('table-editor'), true)
 
-        const teCatcomplete = $scope.teCatcomplete;
+        const teCatcomplete = angular.copy($scope.teCatcomplete);
         if (!angular.isObject(teCatcomplete)) return;
 
         const methodsName = ['close', 'destroy', 'disable', 'enable', 'instance', 'option', 'search', 'widget'];
@@ -11537,7 +11538,6 @@ class teCatcompleteDirective {
 
         // When the ngModel is changed, make sure we're only displaying the label in the input element
         ngModelCtrl.$formatters.push($newModelValue => {
-            console.log('formatter')
             if ($newModelValue) return $newModelValue.label
         })
 
@@ -11598,7 +11598,7 @@ class teCatcompleteDirective {
             };
         });
         teCatcomplete.methods.filter = filter;
-        teCatcomplete.methods.clean = () => this._cleanNgModel(ngModelCtrl);
+        // teCatcomplete.methods.clean = () => this._cleanNgModel(ngModelCtrl);
         element.on('focus', () => this._autoFocusHandler(teCatcomplete, element));
 
 
@@ -11670,34 +11670,36 @@ class teCatcompleteDirective {
         $scope.$on('$destroy', () => {
             catcomplete.catcomplete('destroy')
             element.off();
+            delete $scope.teCatcomplete;
+            element = null;
             tableEditor = null;
             ngModelCtrl = null;
         })
     }
 
-    _changeNgModel(ngModelCtrl, data) {
-        if (angular.isObject(null)) { //always false <-- get rid of this crap
-            if (!ngModelCtrl.$viewValue && ngModelCtrl.$viewValue !== 0) {
-                this._emptyObj(ngModel);
-            } else if (data && data.item) {
-                data.item.label = angular.isObject(data.item.label) ? $('<div>').append(data.item.label).html() : data.item.label;
-                angular.extend(ngModel, data.item);
-            }
-            each(ngModelCtrl.$viewChangeListeners, function(listener) {
-                try {
-                    listener();
-                } catch (e) {
-                    $exceptionHandler(e);
-                }
-            });
-        }
-    }
-    _cleanNgModel(ngModelCtrl) {
-        alert('you actually just used this')
-        ngModelCtrl.$setViewValue('');
-        ngModelCtrl.$render();
-        changeNgModel(ngModelCtrl);
-    }
+    // _changeNgModel(ngModelCtrl, data) {
+    //     if (angular.isObject(null)) { //always false <-- get rid of this crap
+    //         if (!ngModelCtrl.$viewValue && ngModelCtrl.$viewValue !== 0) {
+    //             this._emptyObj(ngModel);
+    //         } else if (data && data.item) {
+    //             data.item.label = angular.isObject(data.item.label) ? $('<div>').append(data.item.label).html() : data.item.label;
+    //             angular.extend(ngModel, data.item);
+    //         }
+    //         each(ngModelCtrl.$viewChangeListeners, function(listener) {
+    //             try {
+    //                 listener();
+    //             } catch (e) {
+    //                 $exceptionHandler(e);
+    //             }
+    //         });
+    //     }
+    // }
+    // _cleanNgModel(ngModelCtrl) {
+    //     alert('you actually just used this')
+    //     ngModelCtrl.$setViewValue('');
+    //     ngModelCtrl.$render();
+    //     // changeNgModel(ngModelCtrl);
+    // }
 
     // Make sure nothing bad is selected while typing, and autoselect match when there is just one
     _setNgModelValue(ngModelChoices, ngModelCtrl, $viewInput) {

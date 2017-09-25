@@ -31,7 +31,7 @@ class teCatcompleteDirective {
         tableEditor = tableEditor();
         if (tableEditor.constructor.name != "TableEditor") tableEditor = tableEditor(element.parents('[table-editor]').first().attr('table-editor'), true)
 
-        const teCatcomplete = $scope.teCatcomplete;
+        const teCatcomplete = angular.copy($scope.teCatcomplete);
         if (!angular.isObject(teCatcomplete)) return;
 
         const methodsName = ['close', 'destroy', 'disable', 'enable', 'instance', 'option', 'search', 'widget'];
@@ -40,7 +40,6 @@ class teCatcompleteDirective {
 
         // When the ngModel is changed, make sure we're only displaying the label in the input element
         ngModelCtrl.$formatters.push($newModelValue => {
-            console.log('formatter')
             if ($newModelValue) return $newModelValue.label
         })
 
@@ -101,7 +100,7 @@ class teCatcompleteDirective {
             };
         });
         teCatcomplete.methods.filter = filter;
-        teCatcomplete.methods.clean = () => this._cleanNgModel(ngModelCtrl);
+        // teCatcomplete.methods.clean = () => this._cleanNgModel(ngModelCtrl);
         element.on('focus', () => this._autoFocusHandler(teCatcomplete, element));
 
 
@@ -173,34 +172,36 @@ class teCatcompleteDirective {
         $scope.$on('$destroy', () => {
             catcomplete.catcomplete('destroy')
             element.off();
+            delete $scope.teCatcomplete;
+            element = null;
             tableEditor = null;
             ngModelCtrl = null;
         })
     }
 
-    _changeNgModel(ngModelCtrl, data) {
-        if (angular.isObject(null)) { //always false <-- get rid of this crap
-            if (!ngModelCtrl.$viewValue && ngModelCtrl.$viewValue !== 0) {
-                this._emptyObj(ngModel);
-            } else if (data && data.item) {
-                data.item.label = angular.isObject(data.item.label) ? $('<div>').append(data.item.label).html() : data.item.label;
-                angular.extend(ngModel, data.item);
-            }
-            each(ngModelCtrl.$viewChangeListeners, function(listener) {
-                try {
-                    listener();
-                } catch (e) {
-                    $exceptionHandler(e);
-                }
-            });
-        }
-    }
-    _cleanNgModel(ngModelCtrl) {
-        alert('you actually just used this')
-        ngModelCtrl.$setViewValue('');
-        ngModelCtrl.$render();
-        changeNgModel(ngModelCtrl);
-    }
+    // _changeNgModel(ngModelCtrl, data) {
+    //     if (angular.isObject(null)) { //always false <-- get rid of this crap
+    //         if (!ngModelCtrl.$viewValue && ngModelCtrl.$viewValue !== 0) {
+    //             this._emptyObj(ngModel);
+    //         } else if (data && data.item) {
+    //             data.item.label = angular.isObject(data.item.label) ? $('<div>').append(data.item.label).html() : data.item.label;
+    //             angular.extend(ngModel, data.item);
+    //         }
+    //         each(ngModelCtrl.$viewChangeListeners, function(listener) {
+    //             try {
+    //                 listener();
+    //             } catch (e) {
+    //                 $exceptionHandler(e);
+    //             }
+    //         });
+    //     }
+    // }
+    // _cleanNgModel(ngModelCtrl) {
+    //     alert('you actually just used this')
+    //     ngModelCtrl.$setViewValue('');
+    //     ngModelCtrl.$render();
+    //     // changeNgModel(ngModelCtrl);
+    // }
 
     // Make sure nothing bad is selected while typing, and autoselect match when there is just one
     _setNgModelValue(ngModelChoices, ngModelCtrl, $viewInput) {

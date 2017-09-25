@@ -98,7 +98,6 @@ class tableEditorDirective {
 
             if (!timeout) timeout = $timeout().then(() => {
                 this.$$initMode = false;
-                console.log('timeout done')
             });
 
             if (this.$$initMode) { // first time we're registering rows, just push everything in there, order should be correct by default.

@@ -94,8 +94,8 @@ class teCellDirective {
         $ctrl.$$getTeRowCtrl = () => teRowController
         $ctrl.$$tableEditor = tableEditor;
         $ctrl.$$onLinkData = tableEditor.onLink(element);
-        $ctrl.$$addAttrsTo = () => this._addAttrsTo($scope, element)
-        $ctrl.$$read = (inputElementScope, init) => this._read(attributes, ngModel, viewValueFormatter, teRowController, $ctrl.$validate, inputElementScope, init)
+        $ctrl.$$addAttrsTo = (element) => this._addAttrsTo($scope, element)
+        $ctrl.$$read = (inputElementScope, init) => this._read($scope, attributes, ngModel, viewValueFormatter, teRowController, $ctrl.$validate, inputElementScope, init)
         $ctrl.$$cellify = () => this._cellify($scope, ngModel, element, $ctrl.$$read);
         $ctrl.$$inputify = () => this._inputify($scope, ngModel, element, $ctrl.$$read);
         $ctrl.$$dispose = () => this._dispose($scope, element, attributes, teRowController, $ctrl.$$cellify, $ctrl.$validate)
@@ -179,7 +179,7 @@ class teCellDirective {
 
 
     // Forms bridge between ngModel on the HTMLInputElement and the one within this directive. inputElementScope is refering to the $scope of the HTMLInputElement, ngModel is the controller living in this directive level
-    _read(attributes, ngModel, viewValueFormatter, teRowController, $validate, inputElementScope, init) {
+    _read($scope, attributes, ngModel, viewValueFormatter, teRowController, $validate, inputElementScope, init) {
         if (init != true) {
             if (inputElementScope.teCatcomplete) {
                 if (inputElementScope.teCell != undefined) ngModel.$setViewValue(inputElementScope.teCell.label);
@@ -195,9 +195,9 @@ class teCellDirective {
                 ngModel.$setViewValue(inputElementScope.teCell)
             }
         }
-        const key = attributes.name || inputElementScope.$id;
+        const key = attributes.name || $scope.$id;
         teRowController.$$setDirty(key, ngModel.$dirty);
-        if (inputElementScope.teCellValidate) $validate();
+        if ($scope.teCellValidate) $validate();
     }
 
     _validate($scope, attributes, ngModel, teRowController) {
@@ -237,10 +237,12 @@ class teCellDirective {
         inputElementScope.teCatcomplete = $scope.teCatcomplete;
 
 
-        $ctrl.$$addAttrsTo(element);
+        
         $$tableEditor.toInputStyle($scope.$ctrl.$$onLinkData, element, template)
 
+        $ctrl.$$addAttrsTo(template);
         const compiledHtml = this._$compile(template)(inputElementScope);
+
         this._$timeout().then(() => {
             element.empty();
             element.append(compiledHtml);
