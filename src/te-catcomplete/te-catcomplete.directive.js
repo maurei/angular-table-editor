@@ -31,7 +31,7 @@ class teCatcompleteDirective {
         tableEditor = tableEditor();
         if (tableEditor.constructor.name != "TableEditor") tableEditor = tableEditor(element.parents('[table-editor]').first().attr('table-editor'), true)
 
-        const teCatcomplete = angular.copy($scope.teCatcomplete);
+        const teCatcomplete = $scope.teCatcomplete;
         if (!angular.isObject(teCatcomplete)) return;
 
         const methodsName = ['close', 'destroy', 'disable', 'enable', 'instance', 'option', 'search', 'widget'];
@@ -172,6 +172,7 @@ class teCatcompleteDirective {
         $scope.$on('$destroy', () => {
             catcomplete.catcomplete('destroy')
             element.off();
+            teCatcomplete.widget = null;
             delete $scope.teCatcomplete;
             element = null;
             tableEditor = null;
