@@ -83,7 +83,7 @@ class teCellDirective {
 
 
         $ctrl.ngModel = ngModel;
-        $ctrl.$validate = () => this._validate($scope, attributes, ngModel, teRowController);
+        $ctrl.$validate = (inputElementScope) => this._validate($scope, attributes, ngModel, teRowController, inputElementScope);
         $ctrl.$$markActive = function() {
             element.find('input').focus();
             teRowController.$$markActiveCell(this);
@@ -195,15 +195,16 @@ class teCellDirective {
         }
         const key = attributes.name || $scope.$id;
         teRowController.$$setDirty(key, ngModel.$dirty);
-        if ($scope.teCellValidate) $validate();
+        if ($scope.teCellValidate) $validate(inputElementScope);
     }
 
-    _validate($scope, attributes, ngModel, teRowController) {
+    _validate($scope, attributes, ngModel, teRowController, inputElementScope) {
         if (Object.keys(ngModel.$validators).length || Object.keys(ngModel.$error).length) {
             const key = attributes.name || $scope.$id;
             teRowController.$$setError(key, ngModel.$error);
         }
-        $scope.$valid = ngModel.$valid
+        $scope.$valid = ngModel.$valid;
+        if(inputElementScope) inputElementScope.$valid = ngModel.$valid;
     }
 
     // $scope.$$childHead is the underlying inputElementScope
@@ -228,8 +229,8 @@ class teCellDirective {
         const inputElementScope = $scope.$new(true);
         inputElementScope.teCell = ngModel.$modelValue;
         inputElementScope.active = true
+        inputElementScope.$valid = $scope.$valid
         inputElementScope.read = () => {inputElementScope.$evalAsync( () => { $$read(inputElementScope) })}
-        
         const template = angular.element($$tableEditor.inputTemplate)
         if ($scope.teCatcomplete) template.attr('te-catcomplete', 'teCatcomplete');
         inputElementScope.teCatcomplete = $scope.teCatcomplete;
