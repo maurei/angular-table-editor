@@ -83,10 +83,15 @@ class teCellDirective {
 
 
         $ctrl.ngModel = ngModel;
+        $ctrl.$active = false;
         $ctrl.$validate = (inputElementScope) => this._validate($scope, attributes, ngModel, teRowController, inputElementScope);
         $ctrl.$$markActive = function() {
             element.find('input').focus();
+            $ctrl.$active = true;
             teRowController.$$markActiveCell(this);
+        }
+        $ctrl.$$unmarkActive = () => {
+            $ctrl.$active = false;
         }
 
         $ctrl.$$getTeRowCtrl = () => teRowController
@@ -154,7 +159,7 @@ class teCellDirective {
 
         teRowController.$$registerCellToggle($ctrl)
         if ($scope.$$teCellSearchUnregisterFn) $scope.$$teCellSearchUnregisterFn();
-        if ($scope.active == true){
+        if ($ctrl.$active == true){
             // if there were any errors before removing a cell, these should be ignored. But only if validation was activated in the first place.
             teRowController.$$removeErrors(attributes.name)
             if ($scope.teCellValidate === true) $scope.teCellValidate = false
@@ -195,7 +200,7 @@ class teCellDirective {
         }
         const key = attributes.name || $scope.$id;
         teRowController.$$setDirty(key, ngModel.$dirty);
-        if ($scope.teCellValidate) $validate(inputElementScope);
+        if ($scope.teCellValidate && init != true) $validate(inputElementScope);
     }
 
     _validate($scope, attributes, ngModel, teRowController, inputElementScope) {
@@ -212,7 +217,7 @@ class teCellDirective {
         const $$tableEditor = $scope.$ctrl.$$tableEditor;
         const $$onLinkData = $scope.$ctrl.$$onLinkData
 
-        $scope.active = false;
+        $scope.$ctrl.$active = false;
         $$read($scope.$$childHead)
         $scope.$$childHead.$destroy();
         element.empty();
@@ -225,20 +230,17 @@ class teCellDirective {
     _inputify($scope, ngModel, element, $$read) {
         const $$tableEditor = $scope.$ctrl.$$tableEditor;
         const $ctrl = $scope.$ctrl;
-
+        $ctrl.$active = true;
         const inputElementScope = $scope.$new(true);
         inputElementScope.teCell = ngModel.$modelValue;
-        inputElementScope.active = true
+        // inputElementScope.active = true
         inputElementScope.$valid = $scope.$valid
         inputElementScope.read = () => {inputElementScope.$evalAsync( () => { $$read(inputElementScope) })}
         const template = angular.element($$tableEditor.inputTemplate)
         if ($scope.teCatcomplete) template.attr('te-catcomplete', 'teCatcomplete');
         inputElementScope.teCatcomplete = $scope.teCatcomplete;
 
-
-        
         $$tableEditor.toInputStyle($scope.$ctrl.$$onLinkData, element, template)
-
         $ctrl.$$addAttrsTo(template);
         const compiledHtml = this._$compile(template)(inputElementScope);
 

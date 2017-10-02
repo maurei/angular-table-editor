@@ -260,6 +260,7 @@ class tableEditorDirective {
             $scope.currentRow = nextRowCtrl;
         }
         $timeout().then(() => {
+            if (prevCell) prevCell.$$unmarkActive();
             $scope.currentCell.$$markActive()
         })
         tableEditor.currentRowContext = $scope.currentRow.$$teRowContext
