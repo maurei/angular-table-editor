@@ -134,8 +134,9 @@ class teCellDirective {
 
 
     controller($scope) {
-        this.$reset = function() {
-            $scope.teCell = ""
+        this.$reset = () => {
+            if ($scope.$$childTail.$id != $scope.$$childHead.$id) throw 'Childtail != Headtail Error';
+            $scope.$$childTail.teCell = '';
         }
     }
 
@@ -159,7 +160,7 @@ class teCellDirective {
 
         teRowController.$$registerCellToggle($ctrl)
         if ($scope.$$teCellSearchUnregisterFn) $scope.$$teCellSearchUnregisterFn();
-        if ($ctrl.$active == true){
+        if ($ctrl.$$inputInitialized == true){
             // if there were any errors before removing a cell, these should be ignored. But only if validation was activated in the first place.
             teRowController.$$removeErrors(attributes.name)
             if ($scope.teCellValidate === true) $scope.teCellValidate = false
@@ -168,10 +169,10 @@ class teCellDirective {
     }
 
     _addAttrsTo($scope, element) {
-        $scope._inputInitialized = true;
+        $scope.$ctrl.$$inputInitialized = true;
         for (let key in $scope.inputAttributes) {
             let attr;
-            if (element.attr(key) && !$scope._inputInitialized) {
+            if (element.attr(key) && !$scope.$ctrl.$$inputInitialized) {
                 attr = element.attr(key) + ' ' + $scope.inputAttributes[key]
             } else {
                 attr = $scope.inputAttributes[key];
@@ -217,6 +218,7 @@ class teCellDirective {
         const $$tableEditor = $scope.$ctrl.$$tableEditor;
         const $$onLinkData = $scope.$ctrl.$$onLinkData
 
+        $scope.$ctrl.$$inputInitialized = false;
         $scope.$ctrl.$active = false;
         $$read($scope.$$childHead)
         $scope.$$childHead.$destroy();
