@@ -34,7 +34,10 @@ class teCellDirective {
             if ($scope.inputAttributes) {
                 if ($scope.inputAttributes.type == 'date') {
                     attributes.name = 'date'
-                    ngModel.$parsers.push(val => new Date(val))
+                    ngModel.$parsers.push(val => {
+                        return $scope.$$childHead.teCell
+                        // nicely hijacking the parsers pipeline again :) (see my stackoverflow answer)
+                    })
                 }
                 if ($scope.inputAttributes.type == 'number') {
                     ngModel.$parsers.push(val => parseFloat(val))
@@ -52,6 +55,7 @@ class teCellDirective {
         } else {
             tableEditor = found;
         }
+
 
         // If a cell uses catcomplete, we're communicating with a nested ngModel. $parsers: the nested ngModel $modelvalue is bound to $scope.teCell, 
         // which is the actual item object. We must return that rather than val, which is just the viewValue i.e. the label in the inputfield. 
