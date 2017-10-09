@@ -15,7 +15,7 @@ function TableEditorProvider() {
                 this[key] = _config[key];
             }
             this._actionPrevented = false
-            this.hooks = {};
+            // this.hooks = {};
             this.name = name
         }
 
@@ -61,7 +61,8 @@ function TableEditorProvider() {
                     },
                     "teCatcomplete": obj => obj.label
                 },
-                broadcastingMode: false
+                broadcastingMode: false,
+                hooks: {}
 
             };
             return defaultConfig;
@@ -111,6 +112,7 @@ function TableEditorProvider() {
         "onLink": null,
         "viewValueFormatter": null,
         "broadcastingMode": null,
+        "hooks": {}
     }
 
 
@@ -121,6 +123,14 @@ function TableEditorProvider() {
         }
         TableEditorRegistry.rollback(label)
         TableEditorRegistry.configs[tableIdentifier][label] = config
+    }
+
+    this.setHooks = function(hooks) {
+        const label = "hooks"
+        const config = Object.assign(TableEditorRegistry.defaultConfig.hooks, hooks);
+        TableEditorRegistry.rollback(label)
+        TableEditorRegistry.configs.unnamed[label] = config;
+        return { forTable: forTable.bind(this, label, config) }
     }
 
     this.setInputTemplate = function(templateString) {

@@ -183,7 +183,7 @@ class tableEditorDirective {
         if (action == false) return
         if (tableEditor.actionPrevented()) return
         let nextCellCtrl;
-        if (action == null) nextCellCtrl = null;
+        if (action == null) nextCellCtrl = false;
         if (action) {
             const rowCtrl = $scope.currentRow;
             const rowIdx = $scope.$tableEditorCtrl.$rows.indexOf(rowCtrl);
@@ -225,7 +225,20 @@ class tableEditorDirective {
         let toRowData = null,
             fromRowData = null;
         // Getting out of editor mode
-        if (nextCellCtrl == null) {
+        // null is used for exit-through-border
+        // false is used for exit-on-command
+        if (nextCellCtrl == null || nextCellCtrl === false) {
+
+
+            if (nextCellCtrl == null) {
+
+                let abort;
+                if (tableEditor.hooks["onTableBorderCross"]){
+                   abort = tableEditor.hooks["onTableBorderCross"]($scope.currentRow);
+                }
+                if (abort) return
+            }
+
             $scope.currentRow.$$cellify();
             const args = {
                 previous: $scope.currentRow.$$teRowContext,
