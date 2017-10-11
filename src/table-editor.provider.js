@@ -1,12 +1,9 @@
-
-
 function TableEditorProvider() {
 
 
     class TableEditor {
 
-        static get
- registry() {
+        static get registry() {
             return TableEditorRegistry;
         }
 
@@ -79,7 +76,7 @@ function TableEditorProvider() {
 
         static $get(name, soft) {
 
-            if ( (name == undefined || name == "") && soft == undefined && Object.keys(TableEditorRegistry.configs).length == 1) {
+            if ((name == undefined || name == "") && soft == undefined && Object.keys(TableEditorRegistry.configs).length == 1) {
                 return TableEditorRegistry.configs.unnamed
             } else {
                 if (!name) {
@@ -99,7 +96,7 @@ function TableEditorProvider() {
         }
     };
 
-    TableEditorRegistry.$get.registerTableEditor =  TableEditorRegistry.registerTableEditor
+    TableEditorRegistry.$get.registerTableEditor = TableEditorRegistry.registerTableEditor
 
     TableEditorRegistry.configs = {
         unnamed: TableEditorRegistry.defaultConfig,
