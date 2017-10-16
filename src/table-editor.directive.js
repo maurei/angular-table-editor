@@ -58,7 +58,7 @@ class tableEditorDirective {
         tableEditor.checkValidity = this._checkValidity.bind(this, element)
         tableEditor.inTable = false;
         $scope.$on('teClick', () => {
-            if (!tableEditor.inTable && $scope.currentCell) executeFor(null);
+            if (!tableEditor.inTable && $scope.currentCell) executeFor(null, {keyCode: 'teClick'});
             tableEditor.inTable = false
         })
         tableEditor.$rows = $scope.$tableEditorCtrl.$rows;
@@ -83,7 +83,7 @@ class tableEditorDirective {
         })
         element.on("keydown", event => {
             let action = associatedAction(event);
-            if ($(event.target).is('input')) { keyboardControl(action) }
+            if ($(event.target).is('input')) { keyboardControl(action, event) }
         })
 
 
@@ -163,7 +163,7 @@ class tableEditorDirective {
             $rootScope.$broadcast('$teCellSearch', nextCell, executeFor)
         } else {
             let action = associatedAction(args.event)
-            keyboardControl(action)
+            keyboardControl(action, args.event)
         }
     }
 
@@ -179,7 +179,7 @@ class tableEditorDirective {
         keyboardControl(cmd)
     }
 
-    _keyboardControl($scope, executeFor, tableEditor, action) {
+    _keyboardControl($scope, executeFor, tableEditor, action, event) {
         if (action == false) return
         if (tableEditor.actionPrevented()) return
         let nextCellCtrl;
@@ -217,37 +217,35 @@ class tableEditorDirective {
                 }
             }
         }
-        executeFor(nextCellCtrl);
+        executeFor(nextCellCtrl, event);
     }
 
 
-    _executeFor($timeout, $scope, tableEditor, nextCellCtrl) {
+    _executeFor($timeout, $scope, tableEditor, nextCellCtrl, event = null) {
         let toRowData = null,
             fromRowData = null;
         // Getting out of editor mode
         // null is used for exit-through-border
         // false is used for exit-on-command
         if (nextCellCtrl == null || nextCellCtrl === false) {
-
-
             if (nextCellCtrl == null) {
-
-                let abort;
-                if (tableEditor.hooks["onTableBorderCross"]){
-                   abort = tableEditor.hooks["onTableBorderCross"]($scope.currentRow);
+                if (tableEditor.hooks["onTableBorderCross"] && event.keyCode == 9){
+                   if (tableEditor.hooks["onTableBorderCross"]($scope.currentRow)) return;
                 }
-                if (abort) return
             }
 
-            $scope.currentRow.$$cellify();
-            const args = {
-                previous: $scope.currentRow.$$teRowContext,
-                next: null
+            if (event && (event.keyCode == 13 || event.keyCode == 'teClick') ){
+                $scope.currentRow.$$cellify();
+                const args = {
+                    previous: $scope.currentRow.$$teRowContext,
+                    next: null
+                }
+                $scope.teRowChange({ args: args })
+                tableEditor.currentRowContext = null;
+                $scope.currentRow = null;
+                $scope.currentCell = null;
             }
-            $scope.teRowChange({ args: args })
-            tableEditor.currentRowContext = null;
-            $scope.currentRow = null;
-            $scope.currentCell = null;
+
             return
         }
 
