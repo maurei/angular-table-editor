@@ -10544,7 +10544,10 @@ class teCellDirective {
             if ($scope.inputAttributes) {
                 if ($scope.inputAttributes.type == 'date') {
                     attributes.name = 'date'
-                    ngModel.$parsers.push(val => new Date(val))
+                    ngModel.$parsers.push(val => {
+                        return $scope.$$childHead.teCell
+                        // nicely hijacking the parsers pipeline again :) (see my stackoverflow answer)
+                    })
                 }
                 if ($scope.inputAttributes.type == 'number') {
                     ngModel.$parsers.push(val => parseFloat(val))
@@ -10562,6 +10565,7 @@ class teCellDirective {
         } else {
             tableEditor = found;
         }
+
 
         // If a cell uses catcomplete, we're communicating with a nested ngModel. $parsers: the nested ngModel $modelvalue is bound to $scope.teCell, 
         // which is the actual item object. We must return that rather than val, which is just the viewValue i.e. the label in the inputfield. 
@@ -10593,10 +10597,15 @@ class teCellDirective {
 
 
         $ctrl.ngModel = ngModel;
-        $ctrl.$validate = () => this._validate($scope, attributes, ngModel, teRowController);
+        $ctrl.$active = false;
+        $ctrl.$validate = (inputElementScope) => this._validate($scope, attributes, ngModel, teRowController, inputElementScope);
         $ctrl.$$markActive = function() {
             element.find('input').focus();
+            $ctrl.$active = true;
             teRowController.$$markActiveCell(this);
+        }
+        $ctrl.$$unmarkActive = () => {
+            $ctrl.$active = false;
         }
 
         $ctrl.$$getTeRowCtrl = () => teRowController
@@ -10639,8 +10648,9 @@ class teCellDirective {
 
 
     controller($scope) {
-        this.$reset = function() {
-            $scope.teCell = ""
+        this.$reset = () => {
+            if ($scope.$$childTail.$id != $scope.$$childHead.$id) throw 'Childtail != Headtail Error';
+            $scope.$$childTail.teCell = '';
         }
     }
 
@@ -10664,7 +10674,7 @@ class teCellDirective {
 
         teRowController.$$registerCellToggle($ctrl)
         if ($scope.$$teCellSearchUnregisterFn) $scope.$$teCellSearchUnregisterFn();
-        if ($scope.active == true){
+        if ($ctrl.$$inputInitialized == true){
             // if there were any errors before removing a cell, these should be ignored. But only if validation was activated in the first place.
             teRowController.$$removeErrors(attributes.name)
             if ($scope.teCellValidate === true) $scope.teCellValidate = false
@@ -10673,10 +10683,10 @@ class teCellDirective {
     }
 
     _addAttrsTo($scope, element) {
-        $scope._inputInitialized = true;
+        $scope.$ctrl.$$inputInitialized = true;
         for (let key in $scope.inputAttributes) {
             let attr;
-            if (element.attr(key) && !$scope._inputInitialized) {
+            if (element.attr(key) && !$scope.$ctrl.$$inputInitialized) {
                 attr = element.attr(key) + ' ' + $scope.inputAttributes[key]
             } else {
                 attr = $scope.inputAttributes[key];
@@ -10705,15 +10715,16 @@ class teCellDirective {
         }
         const key = attributes.name || $scope.$id;
         teRowController.$$setDirty(key, ngModel.$dirty);
-        if ($scope.teCellValidate) $validate();
+        if ($scope.teCellValidate && init != true) $validate(inputElementScope);
     }
 
-    _validate($scope, attributes, ngModel, teRowController) {
+    _validate($scope, attributes, ngModel, teRowController, inputElementScope) {
         if (Object.keys(ngModel.$validators).length || Object.keys(ngModel.$error).length) {
             const key = attributes.name || $scope.$id;
             teRowController.$$setError(key, ngModel.$error);
         }
-        $scope.$valid = ngModel.$valid
+        $scope.$valid = ngModel.$valid;
+        if(inputElementScope) inputElementScope.$valid = ngModel.$valid;
     }
 
     // $scope.$$childHead is the underlying inputElementScope
@@ -10721,7 +10732,8 @@ class teCellDirective {
         const $$tableEditor = $scope.$ctrl.$$tableEditor;
         const $$onLinkData = $scope.$ctrl.$$onLinkData
 
-        $scope.active = false;
+        $scope.$ctrl.$$inputInitialized = false;
+        $scope.$ctrl.$active = false;
         $$read($scope.$$childHead)
         $scope.$$childHead.$destroy();
         element.empty();
@@ -10734,20 +10746,17 @@ class teCellDirective {
     _inputify($scope, ngModel, element, $$read) {
         const $$tableEditor = $scope.$ctrl.$$tableEditor;
         const $ctrl = $scope.$ctrl;
-
+        $ctrl.$active = true;
         const inputElementScope = $scope.$new(true);
         inputElementScope.teCell = ngModel.$modelValue;
-        inputElementScope.active = true
+        // inputElementScope.active = true
+        inputElementScope.$valid = $scope.$valid
         inputElementScope.read = () => {inputElementScope.$evalAsync( () => { $$read(inputElementScope) })}
-        
         const template = angular.element($$tableEditor.inputTemplate)
         if ($scope.teCatcomplete) template.attr('te-catcomplete', 'teCatcomplete');
         inputElementScope.teCatcomplete = $scope.teCatcomplete;
 
-
-        
         $$tableEditor.toInputStyle($scope.$ctrl.$$onLinkData, element, template)
-
         $ctrl.$$addAttrsTo(template);
         const compiledHtml = this._$compile(template)(inputElementScope);
 
@@ -11109,7 +11118,7 @@ class tableEditorDirective {
         if (action == false) return
         if (tableEditor.actionPrevented()) return
         let nextCellCtrl;
-        if (action == null) nextCellCtrl = null;
+        if (action == null) nextCellCtrl = false;
         if (action) {
             const rowCtrl = $scope.currentRow;
             const rowIdx = $scope.$tableEditorCtrl.$rows.indexOf(rowCtrl);
@@ -11151,7 +11160,20 @@ class tableEditorDirective {
         let toRowData = null,
             fromRowData = null;
         // Getting out of editor mode
-        if (nextCellCtrl == null) {
+        // null is used for exit-through-border
+        // false is used for exit-on-command
+        if (nextCellCtrl == null || nextCellCtrl === false) {
+
+
+            if (nextCellCtrl == null) {
+
+                let abort;
+                if (tableEditor.hooks["onTableBorderCross"]){
+                   abort = tableEditor.hooks["onTableBorderCross"]($scope.currentRow);
+                }
+                if (abort) return
+            }
+
             $scope.currentRow.$$cellify();
             const args = {
                 previous: $scope.currentRow.$$teRowContext,
@@ -11186,6 +11208,7 @@ class tableEditorDirective {
             $scope.currentRow = nextRowCtrl;
         }
         $timeout().then(() => {
+            if (prevCell) prevCell.$$unmarkActive();
             $scope.currentCell.$$markActive()
         })
         tableEditor.currentRowContext = $scope.currentRow.$$teRowContext
@@ -11222,15 +11245,12 @@ class tableEditorDirective {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
 function TableEditorProvider() {
 
 
     class TableEditor {
 
-        static get
- registry() {
+        static get registry() {
             return TableEditorRegistry;
         }
 
@@ -11239,7 +11259,7 @@ function TableEditorProvider() {
                 this[key] = _config[key];
             }
             this._actionPrevented = false
-            this.hooks = {};
+            // this.hooks = {};
             this.name = name
         }
 
@@ -11285,7 +11305,8 @@ function TableEditorProvider() {
                     },
                     "teCatcomplete": obj => obj.label
                 },
-                broadcastingMode: false
+                broadcastingMode: false,
+                hooks: {}
 
             };
             return defaultConfig;
@@ -11302,7 +11323,7 @@ function TableEditorProvider() {
 
         static $get(name, soft) {
 
-            if ( (name == undefined || name == "") && soft == undefined && Object.keys(TableEditorRegistry.configs).length == 1) {
+            if ((name == undefined || name == "") && soft == undefined && Object.keys(TableEditorRegistry.configs).length == 1) {
                 return TableEditorRegistry.configs.unnamed
             } else {
                 if (!name) {
@@ -11322,7 +11343,7 @@ function TableEditorProvider() {
         }
     };
 
-    TableEditorRegistry.$get.registerTableEditor =  TableEditorRegistry.registerTableEditor
+    TableEditorRegistry.$get.registerTableEditor = TableEditorRegistry.registerTableEditor
 
     TableEditorRegistry.configs = {
         unnamed: TableEditorRegistry.defaultConfig,
@@ -11335,6 +11356,7 @@ function TableEditorProvider() {
         "onLink": null,
         "viewValueFormatter": null,
         "broadcastingMode": null,
+        "hooks": {}
     }
 
 
@@ -11345,6 +11367,14 @@ function TableEditorProvider() {
         }
         TableEditorRegistry.rollback(label)
         TableEditorRegistry.configs[tableIdentifier][label] = config
+    }
+
+    this.setHooks = function(hooks) {
+        const label = "hooks"
+        const config = Object.assign(TableEditorRegistry.defaultConfig.hooks, hooks);
+        TableEditorRegistry.rollback(label)
+        TableEditorRegistry.configs.unnamed[label] = config;
+        return { forTable: forTable.bind(this, label, config) }
     }
 
     this.setInputTemplate = function(templateString) {
@@ -11434,7 +11464,6 @@ function TableEditorProvider() {
 
 
 /* harmony default export */ __webpack_exports__["a"] = (TableEditorProvider);
-
 
 /***/ }),
 /* 4 */
@@ -11602,26 +11631,26 @@ class teCatcompleteDirective {
 
 
         element.on('keydown', (event) => {
-            if (upOrDownKey(event)) {
-                if (!menuIsOpened()) {
-                    event.stopImmediatePropagation();
-                    tableEditor.trigger({ event: event })
-                } else if (menuIsOpened()) {
-                    if (menuContainsItems()) {
-                        event.preventDefault();
-                        if (menuOptions.length == 1) {
-                            ngModelCtrl.$setViewValue(menuOptions[0].label);
-                            ngModelCtrl.$render();
-                            element.data('custom-catcomplete').selectedItem = menuOptions[0]
-                        } else {
-                            tableEditor.preventAction();
-                        }
+            if (upOrDownKey(event) && !menuIsOpened() ) {
+                event.stopImmediatePropagation();
+                tableEditor.trigger({ event: event })
+            } 
+            else if ( (upOrDownKey(event) || event.keyCode == 13) && menuIsOpened()) {
+                if (menuContainsItems()) {
+                    event.preventDefault();
+                    if (menuOptions.length == 1) {
+                        /* this is part of hijacking the $parser pipeline (note how we call $render to trigger it) */
+                        ngModelCtrl.$setViewValue(menuOptions[0].label);
+                        ngModelCtrl.$render();
+                        element.data('custom-catcomplete').selectedItem = menuOptions[0]
                     } else {
-                        event.stopImmediatePropagation()
-                        tableEditor.trigger({ event: event })
+                        tableEditor.preventAction();
                     }
-                };
-            }
+                } else {
+                    event.stopImmediatePropagation()
+                    tableEditor.trigger({ event: event })
+                }
+            };
         })
 
         function menuIsOpened() {
