@@ -46,5 +46,5 @@
     "build-demo": "cd ./demo && npm install",
     "demo": "http-server ./demo/build -a localhost -p 8000"
   },
-  "version": "0.0.1-beta.0.2.0"
+  "version": "0.0.1-beta.0.2.1"
 }
