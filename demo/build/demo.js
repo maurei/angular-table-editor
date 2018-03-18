@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 301);
+/******/ 	return __webpack_require__(__webpack_require__.s = 302);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1055,24 +1055,24 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(19));
-__export(__webpack_require__(83));
 __export(__webpack_require__(84));
 __export(__webpack_require__(85));
 __export(__webpack_require__(86));
 __export(__webpack_require__(87));
 __export(__webpack_require__(88));
-__export(__webpack_require__(92));
+__export(__webpack_require__(89));
+__export(__webpack_require__(93));
 __export(__webpack_require__(35));
 __export(__webpack_require__(40));
-__export(__webpack_require__(89));
-__export(__webpack_require__(82));
+__export(__webpack_require__(90));
+__export(__webpack_require__(83));
 //# index.js.map
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(94);
+__webpack_require__(95);
 module.exports = angular;
 
 
@@ -1097,11 +1097,11 @@ __export(__webpack_require__(25));
 __export(__webpack_require__(26));
 __export(__webpack_require__(33));
 __export(__webpack_require__(34));
-__webpack_require__(67);
-__webpack_require__(65);
-__webpack_require__(69);
+__webpack_require__(68);
 __webpack_require__(66);
-__webpack_require__(72);
+__webpack_require__(70);
+__webpack_require__(67);
+__webpack_require__(73);
 exports.default = "ui.router";
 //# index.js.map
 
@@ -5127,10 +5127,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var angular_1 = __webpack_require__(11);
 var core_1 = __webpack_require__(4);
 var views_1 = __webpack_require__(26);
-var templateFactory_1 = __webpack_require__(71);
+var templateFactory_1 = __webpack_require__(72);
 var stateProvider_1 = __webpack_require__(33);
-var onEnterExitRetain_1 = __webpack_require__(70);
-var locationServices_1 = __webpack_require__(68);
+var onEnterExitRetain_1 = __webpack_require__(71);
+var locationServices_1 = __webpack_require__(69);
 var urlRouterProvider_1 = __webpack_require__(34);
 angular_1.ng.module("ui.router.angular1", []);
 var mod_init = angular_1.ng.module('ui.router.init', []);
@@ -5922,21 +5922,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var interface_1 = __webpack_require__(13);
 var transition_1 = __webpack_require__(22);
 var hookRegistry_1 = __webpack_require__(31);
-var coreResolvables_1 = __webpack_require__(73);
-var redirectTo_1 = __webpack_require__(77);
-var onEnterExitRetain_1 = __webpack_require__(76);
-var resolve_1 = __webpack_require__(78);
-var views_1 = __webpack_require__(81);
-var updateGlobals_1 = __webpack_require__(79);
-var url_1 = __webpack_require__(80);
+var coreResolvables_1 = __webpack_require__(74);
+var redirectTo_1 = __webpack_require__(78);
+var onEnterExitRetain_1 = __webpack_require__(77);
+var resolve_1 = __webpack_require__(79);
+var views_1 = __webpack_require__(82);
+var updateGlobals_1 = __webpack_require__(80);
+var url_1 = __webpack_require__(81);
 var lazyLoad_1 = __webpack_require__(36);
 var transitionEventType_1 = __webpack_require__(47);
 var transitionHook_1 = __webpack_require__(16);
 var predicates_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(0);
 var hof_1 = __webpack_require__(2);
-var ignoredTransition_1 = __webpack_require__(74);
-var invalidTransition_1 = __webpack_require__(75);
+var ignoredTransition_1 = __webpack_require__(75);
+var invalidTransition_1 = __webpack_require__(76);
 /**
  * The default [[Transition]] options.
  *
@@ -9838,7 +9838,7 @@ https://github.com/pc035860/angular-highlightjs.git */
 
 (function (root, factory) {
   if (true) {
-    module.exports = factory(__webpack_require__(5), __webpack_require__(104));
+    module.exports = factory(__webpack_require__(5), __webpack_require__(105));
   } else if (typeof define === "function" && define.amd) {
     define(["angular", "hljs"], factory);
   } else {
@@ -10357,22 +10357,492 @@ includeDirFactory = function (dirName) {
 /* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(93);
+__webpack_require__(94);
 module.exports = 'ngMessages';
 
 
 /***/ }),
 /* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("angular-table-editor-cat-complete", [], factory);
+	else if(typeof exports === 'object')
+		exports["angular-table-editor-cat-complete"] = factory();
+	else
+		root["angular-table-editor-cat-complete"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+class teCatcompleteDirective {
+
+
+    constructor($timeout, $exceptionHandler, $q, tableEditor) {
+        this.scope = false;
+        this.require = 'ngModel';
+        this.controllerAs = '$teCatcompleteCtrl'
+        this._$timeout = $timeout;
+        this._$q = $q;
+        this._tableEditor = tableEditor;
+        this._$exceptionHandler = $exceptionHandler;
+        this._createWidget();
+
+    }
+
+    controller() {}
+
+    link($scope, element, attributes, ngModelCtrl) {
+        if (!element.is('input')) return
+
+        const $timeout = this._$timeout;
+        const $q = this._$q;
+        const $exceptionHandler = this._$exceptionHandler;
+        const filter = this._filter;
+        let tableEditor = this._tableEditor;
+        tableEditor = tableEditor($scope.teCatcomplete.options.tableEditorName) || tableEditor;
+        if (tableEditor.constructor.name != "TableEditor") tableEditor = tableEditor(element.parents('[table-editor]').first().attr('table-editor'), true)
+
+        const teCatcomplete = $scope.teCatcomplete;
+        if (!angular.isObject(teCatcomplete)) return;
+
+        const methodsName = ['close', 'destroy', 'disable', 'enable', 'instance', 'option', 'search', 'widget'];
+        const eventsName = ['change', 'close', 'create', 'focus', 'open', 'response', 'search', 'select'];
+
+
+        // When the ngModel is changed, make sure we're only displaying the label in the input element
+        ngModelCtrl.$formatters.push($newModelValue => {
+            if ($newModelValue) return $newModelValue.label
+        })
+
+        // We don't want to set the ngModel to the actual $viewInput, i.e. what the user is type, but select one of the teCatcomplete.options accordingly. For this, I "hijack" the $parsers pipeline (https://stackoverflow.com/questions/35309114/set-model-value-programmatically-in-angular-js/44071623#44071623) using _setNgModelValue.
+        ngModelCtrl.$parsers.push( ($viewInput) => this._setNgModelValue(teCatcomplete.options, ngModelCtrl, $viewInput) )
+
+        teCatcomplete.methods = {};
+        teCatcomplete.options = this._checkOptions(element, teCatcomplete.options);
+
+        // extend events to teCatcomplete
+        let status = false;
+        let selectItem = null;
+        const events = {};
+        const uiEvents = {
+            open: function(event, ui) {
+                status = true;
+                selectItem = null;
+            },
+            close: function(event, ui) {
+                status = false;
+            },
+            select: function(event, ui) {
+                selectItem = ui;
+                $timeout(function() {
+                    element.blur();
+                }, 0);
+            },
+            change: function(event, ui) {
+                let value = element.val(),
+                    selected = false;
+
+                if (selectItem && selectItem.item && (value.indexOf(selectItem.item.value) !== -1)) {
+                    value = selectItem.item.value;
+                    selected = true;
+                }
+            }
+        };
+        angular.forEach(eventsName, function(name) {
+            let _event = teCatcomplete.options[name];
+            _event = typeof _event === 'function' ? _event : angular.noop;
+            events[name] = function(event, ui) {
+                if (uiEvents[name]) {
+                    uiEvents[name](event, ui);
+                }
+                _event(event, ui);
+                if (teCatcomplete.events && typeof teCatcomplete.events[name] === 'function') {
+                    teCatcomplete.events[name](event, ui);
+                }
+            };
+        });
+
+        // extend teCatcomplete methods to AngularJS
+        angular.forEach(methodsName, function(name) {
+            teCatcomplete.methods[name] = function() {
+                let args = slice.call(arguments);
+                args.unshift(name);
+                return element.catcomplete.apply(element, args);
+            };
+        });
+        teCatcomplete.methods.filter = filter;
+        // teCatcomplete.methods.clean = () => this._cleanNgModel(ngModelCtrl);
+        element.on('focus', () => this._autoFocusHandler(teCatcomplete, element));
+
+
+
+        element.on('keydown', (event) => {
+            if (upOrDownKey(event) && !menuIsOpened()) {
+                // if the menu is opened, prevent downarrow from opening autocomplete menu.
+                event.stopImmediatePropagation();
+                tableEditor.trigger({ event: event })
+            } else if ((upOrDownKey(event) || event.keyCode == 13) && menuIsOpened()) {
+                if (menuContainsItems()) {
+                    if (menuOptions.length == 1) {
+
+                        if (upOrDownKey(event) && event.keyCode != $.ui.keyCode.TAB && event.keyCode != 16) {
+                            // we shall let UI do its work after all.
+                            tableEditor.preventAction();
+                        } else {
+                            event.preventDefault();
+                            /* this is part of hijacking the $parser pipeline (note how we call $render to trigger it) */
+                            ngModelCtrl.$setViewValue(menuOptions[0].label);
+                            ngModelCtrl.$render();
+                            element.data('custom-catcomplete').selectedItem = menuOptions[0]
+                        }
+                    } else {
+                        event.preventDefault();
+                        tableEditor.preventAction();
+                    }
+                } else {
+                    event.stopImmediatePropagation()
+                    tableEditor.trigger({ event: event })
+                }
+            };
+        })
+
+        function menuIsOpened() {
+            return teCatcomplete.widget.is(':visible');
+        }
+
+        function menuContainsItems() {
+            return menuOptions.length > 1 || menuOptions[0].value != null
+        }
+
+        function upOrDownKey(event) {
+            return event.keyCode === $.ui.keyCode.UP || event.keyCode === $.ui.keyCode.DOWN || event.keyCode === $.ui.keyCode.TAB || event.which == 16
+        }
+        let options = angular.extend({}, teCatcomplete.options, events)
+        const catcomplete = element.catcomplete(options);
+        teCatcomplete.widget = element.catcomplete('widget');
+
+
+        let menuOptions;
+        let selectOption;
+
+
+        element.on("blur", (event) => {
+            if (selectOption) {
+                event.stopPropagation();
+                tableEditor.restoreFocus();
+                selectOption = false;
+            }
+        });
+
+        element.on("catcompleteselect", () => {
+            tableEditor.inTable = true
+            tableEditor.preventAction();
+            selectOption = true
+        });
+
+        element.on("catcompleteresponse", (event, ui) => {
+            menuOptions = ui.content
+        });
+
+        // remove default class, use bootstrap style
+        teCatcomplete.widget.removeClass('ui-menu ui-corner-all ui-widget-content').addClass('dropdown-menu');
+
+        $scope.$on('$destroy', () => {
+            catcomplete.catcomplete('destroy')
+            element.off();
+            teCatcomplete.widget = null;
+            teCatcomplete.methods = null;
+            teCatcomplete.options.position = null
+            delete $scope.teCatcomplete;
+            element = null;
+            tableEditor = null;
+            ngModelCtrl = null;
+        })
+    }
+
+    // Make sure nothing bad is selected while typing, and autoselect match when there is just one
+    _setNgModelValue(options, ngModelCtrl, $viewInput) {
+        const oldModelValue = ngModelCtrl.$modelValue;
+
+
+        if (options.currSource.length) {
+            const filterResults = options.currSource.filter(choice => choice.label == $viewInput)
+            if (filterResults.length == 1) {
+                return filterResults[0]
+            } else {
+                if (!options.allowEmpty) return oldModelValue
+                return options.emptyChoice;
+            }
+        }
+    }
+
+    _autoFocusHandler(teCatcomplete, element, status = false) {
+        if (teCatcomplete.options.focusOpen && !status) {
+            element.catcomplete('search', '');
+        }
+    }
+
+    _checkOptions(element, options) {
+        options = angular.isObject(options) ? options : {};
+        // if source not set, disabled autocomplete
+        options.disabled = options.source ? options.disabled : true;
+        // if focusOpen, minLength must be 0
+        options.appendTo = options.appendTo || element.parents('.ng-view')[0] || element.parents('[ng-view]')[0] || null;
+        options.minLength = options.focusOpen ? 0 : options.minLength;
+        options.outHeight = options.outHeight || 0;
+        options.position = options.position || {
+            my: 'left top',
+            at: 'left bottom',
+            collision: 'flipfit'
+        };
+        return options;
+    }
+
+    _emptyObj(a) {
+        if (angular.isObject(a)) {
+            let reg = /^\$/;
+            each(a, function(value, key) {
+                let type = typeof value;
+                if (reg.test(key)) {
+                    return; // don't clean private property of AngularJS
+                } else if (type === 'number') {
+                    a[key] = 0;
+                } else if (type === 'string') {
+                    a[key] = '';
+                } else if (type === 'boolean') {
+                    a[key] = false;
+                } else if (angular.isObject(value)) {
+                    this._emptyObj(value);
+                }
+            });
+        }
+    }
+
+    _createWidget() {
+        let proto = $.ui.autocomplete.prototype;
+        let initSource = proto._initSource;
+        let slice = Array.prototype.slice;
+
+        function filter(array, term) {
+            let matcher = new RegExp($.ui.autocomplete.escapeRegex(term), 'i');
+            return $.grep(array, function(value) {
+                return matcher.test($('<div>').html(value.label || value.value || value).text());
+            });
+        }
+        this._filter = filter;
+
+        $.extend(proto, {
+            _initSource: function() {
+                if (this.options.html && $.isArray(this.options.source)) {
+                    this.source = function(request, response) {
+                        response(filter(this.options.source, request.term));
+                    };
+                } else {
+                    initSource.call(this);
+                }
+            },
+
+            _normalize: function(items) {
+                // assume all items have the right format
+                return $.map(items, function(item) {
+                    if (item && typeof item === "object") {
+                        return $.extend({
+                            label: item.label || item.value,
+                            value: item.value || item.label
+                        }, item);
+                    } else {
+                        return {
+                            label: item + '',
+                            value: item
+                        };
+                    }
+                });
+            },
+
+            _renderItemData: function(ul, item) {
+                let element = item.groupLabel || item.label;
+                if (item.groupLabel) {
+                    element = $('<div>').append(element).addClass('ui-menu-group');
+                } else if (this.options.html) {
+                    if (typeof element === 'object') {
+                        element = $(element);
+                    }
+                    if (typeof element !== 'object' || element.length > 1 || !element.is('a')) {
+                        element = $('<a class="dropdown-item">').append(element);
+                    }
+                } else {
+                    element = $('<a class="dropdown-item">').text(element);
+                }
+                return $('<li>').append(element).appendTo(ul).data('ui-autocomplete-item', item);
+            },
+
+            _resizeMenu: function() {
+                let that = this;
+                setTimeout(function() {
+                    let ul = that.menu.element;
+                    let maxHeight = ul.css('max-height') || 0,
+                        width = Math.max(
+                            ul.width('').outerWidth() + 1,
+                            that.element.outerWidth()),
+                        oHeight = that.element.height(),
+                        height = $(window).height() - that.options.outHeight - ul.offset().top;
+                    height = maxHeight && height > maxHeight ? maxHeight : height;
+                    ul.css({
+                        width: width,
+                        maxHeight: height
+                    });
+                }, 10);
+            }
+        });
+
+        $.widget("custom.catcomplete", $.ui.autocomplete, {
+            _create: function() {
+                this._super();
+                this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+            },
+            _renderMenu: function(ul, items) {
+                items = items.sort((x, y) => {
+                    if (x.category < y.category) return -1
+                    if (x.category > y.category) return 1
+                    return 0
+                })
+                let that = this,
+                    currentCategory = "";
+                $.each(items, function(index, item) {
+                    let li;
+                    if (item.category != currentCategory) {
+                        ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
+                        currentCategory = item.category;
+                    }
+                    li = that._renderItemData(ul, item);
+                    if (item.category) {
+                        li.attr("aria-label", item.category + " : " + item.label);
+                    }
+                });
+            }
+        });
+    }
+
+}
+console.log(teCatcompleteDirective)
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (teCatcompleteDirective);
+
+/***/ }),
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_documentation_api_documentation_module__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basic_basic_module__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__many_records_many_records_module__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validations_validations_module__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__advanced_advanced_module__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__non_trivial_non_trivial_module__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__customization_customization_module__ = __webpack_require__(294);
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__te_catcomplete_directive__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__te_catcomplete_scss__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__te_catcomplete_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__te_catcomplete_scss__);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (angular.module('mrei.ngTableEditor.catcomplete', [])
+    .directive('teCatcomplete', __WEBPACK_IMPORTED_MODULE_0__te_catcomplete_directive__["a" /* default */])
+    .name);
+
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_documentation_api_documentation_module__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basic_basic_module__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__many_records_many_records_module__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validations_validations_module__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__advanced_advanced_module__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__non_trivial_non_trivial_module__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__customization_customization_module__ = __webpack_require__(295);
 
 
 
@@ -10396,14 +10866,14 @@ module.exports = 'ngMessages';
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__demo_scss__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__demo_scss__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__demo_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__demo_scss__);
-const templateUrl = __webpack_require__(286);
+const templateUrl = __webpack_require__(287);
 
 
 
@@ -10422,7 +10892,7 @@ const demoComponent = {
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -10500,7 +10970,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10571,6 +11041,7 @@ class teCellDirective {
         // which is the actual item object. We must return that rather than val, which is just the viewValue i.e. the label in the inputfield. 
         // $formatters: the label we're putting in must be on the catcomplete choice object on attribute "label".
         if ($scope.teCatcomplete) {
+            if (!tableEditor.constructor.catCompleteLoaded) throw Error("The optional ngTableEditor.catcomplete module must be loaded in order to use the te-catcomplete directive.")
             ngModel.$parsers.push(val => {
                 return $scope.$$childHead.teCell  // hijacking $parpers pipeline, see my answer to this SO question: https://stackoverflow.com/questions/35309114/set-model-value-programmatically-in-angular-js/44071623#44071623
             })
@@ -10734,7 +11205,8 @@ class teCellDirective {
 
         $scope.$ctrl.$$inputInitialized = false;
         $scope.$ctrl.$active = false;
-        $$read($scope.$$childHead)
+        //if ($scope.$$childHead.teCell && $scope.$$childHead.teCell.dummy === null) debugger;
+        $$read($scope.$$childHead) // this is triggering $destroy when allowEmpty case is triggered (when teCatComplete)
         $scope.$$childHead.$destroy();
         element.empty();
         ngModel.$render()
@@ -10937,13 +11409,13 @@ class tableEditorDirective {
 
 
 
-
-    constructor(tableEditor, $rootScope, $timeout) {
+    constructor(tableEditor, $rootScope, $timeout, $injector ) {
         $(window).on('click', () => $rootScope.$broadcast('teClick'))
         this.restrict = "A";
         this.scope = { teRowChange: '&' };
         this.controllerAs = '$tableEditorCtrl'
         this.link = this.link.bind(this, tableEditor, $rootScope, $timeout)
+        tableEditor.setCatCompleteLoadedState($injector.modules['mrei.ngTableEditor.catcomplete'] ? true : false)
     }
 
 
@@ -10993,7 +11465,7 @@ class tableEditorDirective {
         tableEditor.checkValidity = this._checkValidity.bind(this, element)
         tableEditor.inTable = false;
         $scope.$on('teClick', () => {
-            if (!tableEditor.inTable && $scope.currentCell) executeFor(null);
+            if (!tableEditor.inTable && $scope.currentCell) executeFor(null, {keyCode: 'teClick'});
             tableEditor.inTable = false
         })
         tableEditor.$rows = $scope.$tableEditorCtrl.$rows;
@@ -11018,7 +11490,7 @@ class tableEditorDirective {
         })
         element.on("keydown", event => {
             let action = associatedAction(event);
-            if ($(event.target).is('input')) { keyboardControl(action) }
+            if ($(event.target).is('input')) { keyboardControl(action, event) }
         })
 
 
@@ -11098,7 +11570,7 @@ class tableEditorDirective {
             $rootScope.$broadcast('$teCellSearch', nextCell, executeFor)
         } else {
             let action = associatedAction(args.event)
-            keyboardControl(action)
+            keyboardControl(action, args.event)
         }
     }
 
@@ -11106,15 +11578,15 @@ class tableEditorDirective {
         $scope.currentCell.$$markActive();
     }
 
-    _move(keyboardControl, moveMapper, cmd) {
+    _move(keyboardControl, moveMapper, cmd, event = null) {
         if (typeof(cmd) == 'string') {
             cmd = moveMapper[cmd];
             if (!cmd) return;
         }
-        keyboardControl(cmd)
+        keyboardControl(cmd, event)
     }
 
-    _keyboardControl($scope, executeFor, tableEditor, action) {
+    _keyboardControl($scope, executeFor, tableEditor, action, event) {
         if (action == false) return
         if (tableEditor.actionPrevented()) return
         let nextCellCtrl;
@@ -11152,37 +11624,35 @@ class tableEditorDirective {
                 }
             }
         }
-        executeFor(nextCellCtrl);
+        executeFor(nextCellCtrl, event);
     }
 
 
-    _executeFor($timeout, $scope, tableEditor, nextCellCtrl) {
+    _executeFor($timeout, $scope, tableEditor, nextCellCtrl, event = null) {
         let toRowData = null,
             fromRowData = null;
         // Getting out of editor mode
         // null is used for exit-through-border
         // false is used for exit-on-command
         if (nextCellCtrl == null || nextCellCtrl === false) {
-
-
             if (nextCellCtrl == null) {
-
-                let abort;
-                if (tableEditor.hooks["onTableBorderCross"]){
-                   abort = tableEditor.hooks["onTableBorderCross"]($scope.currentRow);
+                if (tableEditor.hooks["onTableBorderCross"] && event.keyCode == 9){
+                   if (tableEditor.hooks["onTableBorderCross"]($scope.currentRow)) return;
                 }
-                if (abort) return
             }
 
-            $scope.currentRow.$$cellify();
-            const args = {
-                previous: $scope.currentRow.$$teRowContext,
-                next: null
+            if (event && (event.keyCode == 13 || event.keyCode == 'teClick') ){
+                $scope.currentRow.$$cellify();
+                const args = {
+                    previous: $scope.currentRow.$$teRowContext,
+                    next: null
+                }
+                $scope.teRowChange({ args: args })
+                tableEditor.currentRowContext = null;
+                $scope.currentRow = null;
+                $scope.currentCell = null;
             }
-            $scope.teRowChange({ args: args })
-            tableEditor.currentRowContext = null;
-            $scope.currentRow = null;
-            $scope.currentCell = null;
+
             return
         }
 
@@ -11246,7 +11716,6 @@ class tableEditorDirective {
 
 "use strict";
 function TableEditorProvider() {
-
 
     class TableEditor {
 
@@ -11344,6 +11813,7 @@ function TableEditorProvider() {
     };
 
     TableEditorRegistry.$get.registerTableEditor = TableEditorRegistry.registerTableEditor
+    TableEditorRegistry.$get.setCatCompleteLoadedState = (value) => TableEditor.catCompleteLoaded = value
 
     TableEditorRegistry.configs = {
         unnamed: TableEditorRegistry.defaultConfig,
@@ -11470,35 +11940,11 @@ function TableEditorProvider() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__te_catcomplete_directive__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__te_catcomplete_scss__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__te_catcomplete_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__te_catcomplete_scss__);
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = (angular.module('mrei.ngTableEditor.catcomplete', [])
-    .directive('teCatcomplete', __WEBPACK_IMPORTED_MODULE_0__te_catcomplete_directive__["a" /* default */])
-    .name);
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__table_editor_directive__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__table_editor_provider__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__table_editor_row_directive__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__table_editor_cell_directive__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__te_catcomplete_te_catcomplete_module__ = __webpack_require__(4);
-
 
 
 
@@ -11508,9 +11954,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = (angular
-    .module('ngTableEditor', [
-      __WEBPACK_IMPORTED_MODULE_4__te_catcomplete_te_catcomplete_module__["a" /* default */]
-    ])
+    .module('ngTableEditor', [])
     .provider('tableEditor', __WEBPACK_IMPORTED_MODULE_1__table_editor_provider__["a" /* default */])
     .directive('tableEditor', __WEBPACK_IMPORTED_MODULE_0__table_editor_directive__["a" /* default */])
     .directive('teRow', __WEBPACK_IMPORTED_MODULE_2__table_editor_row_directive__["a" /* default */])
@@ -11518,368 +11962,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     .name);
 
 
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class teCatcompleteDirective {
-
-
-    constructor($timeout, $exceptionHandler, $q, tableEditor) {
-        // AngularJS directive required properties
-        this.scope = false;
-        this.require = 'ngModel';
-        this.controllerAs = '$teCatcompleteCtrl'
-
-        // internal usage of AngularJS services
-        this._$timeout = $timeout;
-        this._$q = $q;
-        this._tableEditor = tableEditor;
-        this._$exceptionHandler = $exceptionHandler;
-
-        // Extending jQuery UI autocomplete widget to catcomplete.
-        this._createWidget();
-
-    }
-
-    controller() {}
-
-    link($scope, element, attributes, ngModelCtrl) {
-        if (!element.is('input')) return
-
-        const $timeout = this._$timeout;
-        const $q = this._$q;
-        const $exceptionHandler = this._$exceptionHandler;
-        const filter = this._filter;
-        let tableEditor = this._tableEditor;
-        tableEditor = tableEditor();
-        if (tableEditor.constructor.name != "TableEditor") tableEditor = tableEditor(element.parents('[table-editor]').first().attr('table-editor'), true)
-
-        const teCatcomplete = $scope.teCatcomplete;
-        if (!angular.isObject(teCatcomplete)) return;
-
-        const methodsName = ['close', 'destroy', 'disable', 'enable', 'instance', 'option', 'search', 'widget'];
-        const eventsName = ['change', 'close', 'create', 'focus', 'open', 'response', 'search', 'select'];
-
-
-        // When the ngModel is changed, make sure we're only displaying the label in the input element
-        ngModelCtrl.$formatters.push($newModelValue => {
-            if ($newModelValue) return $newModelValue.label
-        })
-
-        // We don't want to set the ngModel to the actual $viewInput, i.e. what the user is type, but select one of the teCatcomplete.options accordingly. For this, I "hijack" the $parsers pipeline (https://stackoverflow.com/questions/35309114/set-model-value-programmatically-in-angular-js/44071623#44071623) using _setNgModelValue.
-        ngModelCtrl.$parsers.push(($viewInput) => this._setNgModelValue(teCatcomplete.options, ngModelCtrl, $viewInput))
-
-        teCatcomplete.methods = {};
-        teCatcomplete.options = this._checkOptions(element, teCatcomplete.options);
-
-        // extend events to teCatcomplete
-        let status = false;
-        let selectItem = null;
-        const events = {};
-        const uiEvents = {
-            open: function(event, ui) {
-                status = true;
-                selectItem = null;
-            },
-            close: function(event, ui) {
-                status = false;
-            },
-            select: function(event, ui) {
-                selectItem = ui;
-                $timeout(function() {
-                    element.blur();
-                }, 0);
-            },
-            change: function(event, ui) {
-                let value = element.val(),
-                    selected = false;
-
-                if (selectItem && selectItem.item && (value.indexOf(selectItem.item.value) !== -1)) {
-                    value = selectItem.item.value;
-                    selected = true;
-                }
-            }
-        };
-        angular.forEach(eventsName, function(name) {
-            let _event = teCatcomplete.options[name];
-            _event = typeof _event === 'function' ? _event : angular.noop;
-            events[name] = function(event, ui) {
-                if (uiEvents[name]) {
-                    uiEvents[name](event, ui);
-                }
-                _event(event, ui);
-                if (teCatcomplete.events && typeof teCatcomplete.events[name] === 'function') {
-                    teCatcomplete.events[name](event, ui);
-                }
-            };
-        });
-
-        // extend teCatcomplete methods to AngularJS
-        angular.forEach(methodsName, function(name) {
-            teCatcomplete.methods[name] = function() {
-                let args = slice.call(arguments);
-                args.unshift(name);
-                return element.catcomplete.apply(element, args);
-            };
-        });
-        teCatcomplete.methods.filter = filter;
-        // teCatcomplete.methods.clean = () => this._cleanNgModel(ngModelCtrl);
-        element.on('focus', () => this._autoFocusHandler(teCatcomplete, element));
-
-
-
-        element.on('keydown', (event) => {
-            if (upOrDownKey(event) && !menuIsOpened() ) {
-                event.stopImmediatePropagation();
-                tableEditor.trigger({ event: event })
-            } 
-            else if ( (upOrDownKey(event) || event.keyCode == 13) && menuIsOpened()) {
-                if (menuContainsItems()) {
-                    event.preventDefault();
-                    if (menuOptions.length == 1) {
-                        /* this is part of hijacking the $parser pipeline (note how we call $render to trigger it) */
-                        ngModelCtrl.$setViewValue(menuOptions[0].label);
-                        ngModelCtrl.$render();
-                        element.data('custom-catcomplete').selectedItem = menuOptions[0]
-                    } else {
-                        tableEditor.preventAction();
-                    }
-                } else {
-                    event.stopImmediatePropagation()
-                    tableEditor.trigger({ event: event })
-                }
-            };
-        })
-
-        function menuIsOpened() {
-            return teCatcomplete.widget.is(':visible');
-        }
-
-        function menuContainsItems() {
-            return menuOptions.length > 1 || menuOptions[0].value != null
-        }
-
-        function upOrDownKey(event) {
-            return event.keyCode === $.ui.keyCode.UP || event.keyCode === $.ui.keyCode.DOWN || event.keyCode === $.ui.keyCode.TAB || event.which == 16
-        }
-        let options = angular.extend({}, teCatcomplete.options, events)
-        const catcomplete = element.catcomplete(options);
-        teCatcomplete.widget = element.catcomplete('widget');
-
-
-        let menuOptions;
-        let selectOption;
-
-
-        element.on("blur", (event) => {
-            if (selectOption) {
-                event.stopPropagation();
-                tableEditor.restoreFocus();
-                selectOption = false;
-            }
-        });
-
-        element.on("catcompleteselect", () => {
-            tableEditor.inTable = true
-            tableEditor.preventAction();
-            selectOption = true
-        });
-
-        element.on("catcompleteresponse", (event, ui) => {
-            menuOptions = ui.content
-        });
-
-        // remove default class, use bootstrap style
-        teCatcomplete.widget.removeClass('ui-menu ui-corner-all ui-widget-content').addClass('dropdown-menu');
-
-        $scope.$on('$destroy', () => {
-            catcomplete.catcomplete('destroy')
-            element.off();
-            teCatcomplete.widget = null;
-            teCatcomplete.methods = null;
-            teCatcomplete.options.position = null
-            delete $scope.teCatcomplete;
-            element = null;
-            tableEditor = null;
-            ngModelCtrl = null;
-        })
-    }
-
-    // Make sure nothing bad is selected while typing, and autoselect match when there is just one
-    _setNgModelValue(ngModelChoices, ngModelCtrl, $viewInput) {
-        const oldModelValue = ngModelCtrl.$modelValue;
-        if (ngModelChoices.currSource.length) {
-            const x = ngModelChoices.currSource.filter(choice => choice.label == $viewInput)
-            if (x.length == 1) {
-                return x[0]
-            } else {
-                return oldModelValue
-            }
-        }
-    }
-
-    _autoFocusHandler(teCatcomplete, element, status = false) {
-        if (teCatcomplete.options.focusOpen && !status) {
-            element.catcomplete('search', '');
-        }
-    }
-
-    _checkOptions(element, options) {
-        options = angular.isObject(options) ? options : {};
-        // if source not set, disabled autocomplete
-        options.disabled = options.source ? options.disabled : true;
-        // if focusOpen, minLength must be 0
-        options.appendTo = options.appendTo || element.parents('.ng-view')[0] || element.parents('[ng-view]')[0] || null;
-        options.minLength = options.focusOpen ? 0 : options.minLength;
-        options.outHeight = options.outHeight || 0;
-        options.position = options.position || {
-            my: 'left top',
-            at: 'left bottom',
-            collision: 'flipfit'
-        };
-        return options;
-    }
-
-    _emptyObj(a) {
-        if (angular.isObject(a)) {
-            let reg = /^\$/;
-            each(a, function(value, key) {
-                let type = typeof value;
-                if (reg.test(key)) {
-                    return; // don't clean private property of AngularJS
-                } else if (type === 'number') {
-                    a[key] = 0;
-                } else if (type === 'string') {
-                    a[key] = '';
-                } else if (type === 'boolean') {
-                    a[key] = false;
-                } else if (angular.isObject(value)) {
-                    this._emptyObj(value);
-                }
-            });
-        }
-    }
-
-    _createWidget() {
-        let proto = $.ui.autocomplete.prototype;
-        let initSource = proto._initSource;
-        let slice = Array.prototype.slice;
-
-        function filter(array, term) {
-            let matcher = new RegExp($.ui.autocomplete.escapeRegex(term), 'i');
-            return $.grep(array, function(value) {
-                return matcher.test($('<div>').html(value.label || value.value || value).text());
-            });
-        }
-        this._filter = filter;
-
-        $.extend(proto, {
-            _initSource: function() {
-                if (this.options.html && $.isArray(this.options.source)) {
-                    this.source = function(request, response) {
-                        response(filter(this.options.source, request.term));
-                    };
-                } else {
-                    initSource.call(this);
-                }
-            },
-
-            _normalize: function(items) {
-                // assume all items have the right format
-                return $.map(items, function(item) {
-                    if (item && typeof item === "object") {
-                        return $.extend({
-                            label: item.label || item.value,
-                            value: item.value || item.label
-                        }, item);
-                    } else {
-                        return {
-                            label: item + '',
-                            value: item
-                        };
-                    }
-                });
-            },
-
-            _renderItemData: function(ul, item) {
-                let element = item.groupLabel || item.label;
-                if (item.groupLabel) {
-                    element = $('<div>').append(element).addClass('ui-menu-group');
-                } else if (this.options.html) {
-                    if (typeof element === 'object') {
-                        element = $(element);
-                    }
-                    if (typeof element !== 'object' || element.length > 1 || !element.is('a')) {
-                        element = $('<a class="dropdown-item">').append(element);
-                    }
-                } else {
-                    element = $('<a class="dropdown-item">').text(element);
-                }
-                return $('<li>').append(element).appendTo(ul).data('ui-autocomplete-item', item);
-            },
-
-            _resizeMenu: function() {
-                let that = this;
-                setTimeout(function() {
-                    let ul = that.menu.element;
-                    let maxHeight = ul.css('max-height') || 0,
-                        width = Math.max(
-                            ul.width('').outerWidth() + 1,
-                            that.element.outerWidth()),
-                        oHeight = that.element.height(),
-                        height = $(window).height() - that.options.outHeight - ul.offset().top;
-                    height = maxHeight && height > maxHeight ? maxHeight : height;
-                    ul.css({
-                        width: width,
-                        maxHeight: height
-                    });
-                }, 10);
-            }
-        });
-
-        $.widget("custom.catcomplete", $.ui.autocomplete, {
-            _create: function() {
-                this._super();
-                this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
-            },
-            _renderMenu: function(ul, items) {
-                items = items.sort((x, y) => {
-                    if (x.category < y.category) return -1
-                    if (x.category > y.category) return 1
-                    return 0
-                })
-                let that = this,
-                    currentCategory = "";
-                $.each(items, function(index, item) {
-                    let li;
-                    if (item.category != currentCategory) {
-                        ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
-                        currentCategory = item.category;
-                    }
-                    li = that._renderItemData(ul, item);
-                    if (item.category) {
-                        li.attr("aria-label", item.category + " : " + item.label);
-                    }
-                });
-            }
-        });
-    }
-
-}
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = (teCatcompleteDirective);
-
 /***/ })
 /******/ ]);
 });
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12456,7 +12544,7 @@ angular_1.ng.module('ui.router.state')
 //# stateDirectives.js.map
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12752,7 +12840,7 @@ angular_1.ng.module('ui.router.state').directive('uiView', $ViewDirectiveFill);
 //# viewDirective.js.map
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13126,7 +13214,7 @@ var $urlMatcherFactoryProvider;
 //# injectables.js.map
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13207,7 +13295,7 @@ exports.Ng1LocationServices = Ng1LocationServices;
 //# locationServices.js.map
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13259,7 +13347,7 @@ angular_1.ng.module('ui.router.state')
 //# stateFilters.js.map
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13290,7 +13378,7 @@ exports.getStateHookBuilder = function (hookName) {
 //# onEnterExitRetain.js.map
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13490,7 +13578,7 @@ var scopeBindings = function (bindingsObj) { return Object.keys(bindingsObj || {
 //# templateFactory.js.map
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13519,7 +13607,7 @@ angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProv
 //# viewScroll.js.map
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13543,7 +13631,7 @@ exports.registerAddCoreResolvables = function (transitionService) {
 //# coreResolvables.js.map
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13580,7 +13668,7 @@ exports.registerIgnoredTransitionHook = function (transitionService) {
 //# ignoredTransition.js.map
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13605,7 +13693,7 @@ exports.registerInvalidTransitionHook = function (transitionService) {
 //# invalidTransition.js.map
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13668,7 +13756,7 @@ exports.registerOnEnterHook = function (transitionService) {
 //# onEnterExitRetain.js.map
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13711,7 +13799,7 @@ exports.registerRedirectToHook = function (transitionService) {
 //# redirectTo.js.map
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13760,7 +13848,7 @@ exports.registerLazyResolveState = function (transitionService) {
 //# resolve.js.map
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13801,7 +13889,7 @@ exports.registerUpdateGlobalState = function (transitionService) {
 //# updateGlobals.js.map
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13832,7 +13920,7 @@ exports.registerUpdateUrl = function (transitionService) {
 //# url.js.map
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13885,7 +13973,7 @@ exports.registerActivateViews = function (transitionService) {
 //# views.js.map
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13912,7 +14000,7 @@ exports.UIRouterPluginBase = UIRouterPluginBase;
 //# interface.js.map
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13928,7 +14016,7 @@ __export(__webpack_require__(28));
 //# index.js.map
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13943,7 +14031,7 @@ __export(__webpack_require__(20));
 //# index.js.map
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13959,7 +14047,7 @@ __export(__webpack_require__(21));
 //# index.js.map
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13978,7 +14066,7 @@ __export(__webpack_require__(9));
 //# index.js.map
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14012,7 +14100,7 @@ __export(__webpack_require__(32));
 //# index.js.map
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14029,7 +14117,7 @@ __export(__webpack_require__(51));
 //# index.js.map
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14043,11 +14131,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module vanilla
  */
 /** */
-__export(__webpack_require__(90));
+__export(__webpack_require__(91));
 //# vanilla.js.map
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14065,11 +14153,11 @@ __export(__webpack_require__(57));
 __export(__webpack_require__(55));
 __export(__webpack_require__(52));
 __export(__webpack_require__(17));
-__export(__webpack_require__(91));
+__export(__webpack_require__(92));
 //# index.js.map
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14104,7 +14192,7 @@ exports.memoryLocationPlugin = utils_1.locationPluginFactory("vanilla.memoryLoca
 //# plugins.js.map
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14117,7 +14205,7 @@ __export(__webpack_require__(59));
 //# index.js.map
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 /**
@@ -14863,7 +14951,7 @@ function ngMessageDirectiveFactory() {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 /**
@@ -48240,12 +48328,6 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 95 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 96 */
 /***/ (function(module, exports) {
 
@@ -48289,6 +48371,12 @@ $provide.value("$locale", {
 
 /***/ }),
 /* 103 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -49110,190 +49198,190 @@ https://highlightjs.org/
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hljs = __webpack_require__(103);
+var hljs = __webpack_require__(104);
 
-hljs.registerLanguage('1c', __webpack_require__(105));
-hljs.registerLanguage('abnf', __webpack_require__(106));
-hljs.registerLanguage('accesslog', __webpack_require__(107));
-hljs.registerLanguage('actionscript', __webpack_require__(108));
-hljs.registerLanguage('ada', __webpack_require__(109));
-hljs.registerLanguage('apache', __webpack_require__(110));
-hljs.registerLanguage('applescript', __webpack_require__(111));
-hljs.registerLanguage('cpp', __webpack_require__(135));
-hljs.registerLanguage('arduino', __webpack_require__(112));
-hljs.registerLanguage('armasm', __webpack_require__(113));
-hljs.registerLanguage('xml', __webpack_require__(275));
-hljs.registerLanguage('asciidoc', __webpack_require__(114));
-hljs.registerLanguage('aspectj', __webpack_require__(115));
-hljs.registerLanguage('autohotkey', __webpack_require__(116));
-hljs.registerLanguage('autoit', __webpack_require__(117));
-hljs.registerLanguage('avrasm', __webpack_require__(118));
-hljs.registerLanguage('awk', __webpack_require__(119));
-hljs.registerLanguage('axapta', __webpack_require__(120));
-hljs.registerLanguage('bash', __webpack_require__(121));
-hljs.registerLanguage('basic', __webpack_require__(122));
-hljs.registerLanguage('bnf', __webpack_require__(123));
-hljs.registerLanguage('brainfuck', __webpack_require__(124));
-hljs.registerLanguage('cal', __webpack_require__(125));
-hljs.registerLanguage('capnproto', __webpack_require__(126));
-hljs.registerLanguage('ceylon', __webpack_require__(127));
-hljs.registerLanguage('clean', __webpack_require__(128));
-hljs.registerLanguage('clojure', __webpack_require__(130));
-hljs.registerLanguage('clojure-repl', __webpack_require__(129));
-hljs.registerLanguage('cmake', __webpack_require__(131));
-hljs.registerLanguage('coffeescript', __webpack_require__(132));
-hljs.registerLanguage('coq', __webpack_require__(133));
-hljs.registerLanguage('cos', __webpack_require__(134));
-hljs.registerLanguage('crmsh', __webpack_require__(136));
-hljs.registerLanguage('crystal', __webpack_require__(137));
-hljs.registerLanguage('cs', __webpack_require__(138));
-hljs.registerLanguage('csp', __webpack_require__(139));
-hljs.registerLanguage('css', __webpack_require__(140));
-hljs.registerLanguage('d', __webpack_require__(141));
-hljs.registerLanguage('markdown', __webpack_require__(200));
-hljs.registerLanguage('dart', __webpack_require__(142));
-hljs.registerLanguage('delphi', __webpack_require__(143));
-hljs.registerLanguage('diff', __webpack_require__(144));
-hljs.registerLanguage('django', __webpack_require__(145));
-hljs.registerLanguage('dns', __webpack_require__(146));
-hljs.registerLanguage('dockerfile', __webpack_require__(147));
-hljs.registerLanguage('dos', __webpack_require__(148));
-hljs.registerLanguage('dsconfig', __webpack_require__(149));
-hljs.registerLanguage('dts', __webpack_require__(150));
-hljs.registerLanguage('dust', __webpack_require__(151));
-hljs.registerLanguage('ebnf', __webpack_require__(152));
-hljs.registerLanguage('elixir', __webpack_require__(153));
-hljs.registerLanguage('elm', __webpack_require__(154));
-hljs.registerLanguage('ruby', __webpack_require__(239));
-hljs.registerLanguage('erb', __webpack_require__(155));
-hljs.registerLanguage('erlang-repl', __webpack_require__(156));
-hljs.registerLanguage('erlang', __webpack_require__(157));
-hljs.registerLanguage('excel', __webpack_require__(158));
-hljs.registerLanguage('fix', __webpack_require__(159));
-hljs.registerLanguage('flix', __webpack_require__(160));
-hljs.registerLanguage('fortran', __webpack_require__(161));
-hljs.registerLanguage('fsharp', __webpack_require__(162));
-hljs.registerLanguage('gams', __webpack_require__(163));
-hljs.registerLanguage('gauss', __webpack_require__(164));
-hljs.registerLanguage('gcode', __webpack_require__(165));
-hljs.registerLanguage('gherkin', __webpack_require__(166));
-hljs.registerLanguage('glsl', __webpack_require__(167));
-hljs.registerLanguage('go', __webpack_require__(168));
-hljs.registerLanguage('golo', __webpack_require__(169));
-hljs.registerLanguage('gradle', __webpack_require__(170));
-hljs.registerLanguage('groovy', __webpack_require__(171));
-hljs.registerLanguage('haml', __webpack_require__(172));
-hljs.registerLanguage('handlebars', __webpack_require__(173));
-hljs.registerLanguage('haskell', __webpack_require__(174));
-hljs.registerLanguage('haxe', __webpack_require__(175));
-hljs.registerLanguage('hsp', __webpack_require__(176));
-hljs.registerLanguage('htmlbars', __webpack_require__(177));
-hljs.registerLanguage('http', __webpack_require__(178));
-hljs.registerLanguage('hy', __webpack_require__(179));
-hljs.registerLanguage('inform7', __webpack_require__(180));
-hljs.registerLanguage('ini', __webpack_require__(181));
-hljs.registerLanguage('irpf90', __webpack_require__(182));
-hljs.registerLanguage('java', __webpack_require__(183));
-hljs.registerLanguage('javascript', __webpack_require__(184));
-hljs.registerLanguage('jboss-cli', __webpack_require__(185));
-hljs.registerLanguage('json', __webpack_require__(186));
-hljs.registerLanguage('julia', __webpack_require__(187));
-hljs.registerLanguage('kotlin', __webpack_require__(188));
-hljs.registerLanguage('lasso', __webpack_require__(189));
-hljs.registerLanguage('ldif', __webpack_require__(190));
-hljs.registerLanguage('leaf', __webpack_require__(191));
-hljs.registerLanguage('less', __webpack_require__(192));
-hljs.registerLanguage('lisp', __webpack_require__(193));
-hljs.registerLanguage('livecodeserver', __webpack_require__(194));
-hljs.registerLanguage('livescript', __webpack_require__(195));
-hljs.registerLanguage('llvm', __webpack_require__(196));
-hljs.registerLanguage('lsl', __webpack_require__(197));
-hljs.registerLanguage('lua', __webpack_require__(198));
-hljs.registerLanguage('makefile', __webpack_require__(199));
-hljs.registerLanguage('mathematica', __webpack_require__(201));
-hljs.registerLanguage('matlab', __webpack_require__(202));
-hljs.registerLanguage('maxima', __webpack_require__(203));
-hljs.registerLanguage('mel', __webpack_require__(204));
-hljs.registerLanguage('mercury', __webpack_require__(205));
-hljs.registerLanguage('mipsasm', __webpack_require__(206));
-hljs.registerLanguage('mizar', __webpack_require__(207));
-hljs.registerLanguage('perl', __webpack_require__(221));
-hljs.registerLanguage('mojolicious', __webpack_require__(208));
-hljs.registerLanguage('monkey', __webpack_require__(209));
-hljs.registerLanguage('moonscript', __webpack_require__(210));
-hljs.registerLanguage('n1ql', __webpack_require__(211));
-hljs.registerLanguage('nginx', __webpack_require__(212));
-hljs.registerLanguage('nimrod', __webpack_require__(213));
-hljs.registerLanguage('nix', __webpack_require__(214));
-hljs.registerLanguage('nsis', __webpack_require__(215));
-hljs.registerLanguage('objectivec', __webpack_require__(216));
-hljs.registerLanguage('ocaml', __webpack_require__(217));
-hljs.registerLanguage('openscad', __webpack_require__(218));
-hljs.registerLanguage('oxygene', __webpack_require__(219));
-hljs.registerLanguage('parser3', __webpack_require__(220));
-hljs.registerLanguage('pf', __webpack_require__(222));
-hljs.registerLanguage('php', __webpack_require__(223));
-hljs.registerLanguage('pony', __webpack_require__(224));
-hljs.registerLanguage('powershell', __webpack_require__(225));
-hljs.registerLanguage('processing', __webpack_require__(226));
-hljs.registerLanguage('profile', __webpack_require__(227));
-hljs.registerLanguage('prolog', __webpack_require__(228));
-hljs.registerLanguage('protobuf', __webpack_require__(229));
-hljs.registerLanguage('puppet', __webpack_require__(230));
-hljs.registerLanguage('purebasic', __webpack_require__(231));
-hljs.registerLanguage('python', __webpack_require__(232));
-hljs.registerLanguage('q', __webpack_require__(233));
-hljs.registerLanguage('qml', __webpack_require__(234));
-hljs.registerLanguage('r', __webpack_require__(235));
-hljs.registerLanguage('rib', __webpack_require__(236));
-hljs.registerLanguage('roboconf', __webpack_require__(237));
-hljs.registerLanguage('rsl', __webpack_require__(238));
-hljs.registerLanguage('ruleslanguage', __webpack_require__(240));
-hljs.registerLanguage('rust', __webpack_require__(241));
-hljs.registerLanguage('scala', __webpack_require__(242));
-hljs.registerLanguage('scheme', __webpack_require__(243));
-hljs.registerLanguage('scilab', __webpack_require__(244));
-hljs.registerLanguage('scss', __webpack_require__(245));
-hljs.registerLanguage('shell', __webpack_require__(246));
-hljs.registerLanguage('smali', __webpack_require__(247));
-hljs.registerLanguage('smalltalk', __webpack_require__(248));
-hljs.registerLanguage('sml', __webpack_require__(249));
-hljs.registerLanguage('sqf', __webpack_require__(250));
-hljs.registerLanguage('sql', __webpack_require__(251));
-hljs.registerLanguage('stan', __webpack_require__(252));
-hljs.registerLanguage('stata', __webpack_require__(253));
-hljs.registerLanguage('step21', __webpack_require__(254));
-hljs.registerLanguage('stylus', __webpack_require__(255));
-hljs.registerLanguage('subunit', __webpack_require__(256));
-hljs.registerLanguage('swift', __webpack_require__(257));
-hljs.registerLanguage('taggerscript', __webpack_require__(258));
-hljs.registerLanguage('yaml', __webpack_require__(277));
-hljs.registerLanguage('tap', __webpack_require__(259));
-hljs.registerLanguage('tcl', __webpack_require__(260));
-hljs.registerLanguage('tex', __webpack_require__(261));
-hljs.registerLanguage('thrift', __webpack_require__(262));
-hljs.registerLanguage('tp', __webpack_require__(263));
-hljs.registerLanguage('twig', __webpack_require__(264));
-hljs.registerLanguage('typescript', __webpack_require__(265));
-hljs.registerLanguage('vala', __webpack_require__(266));
-hljs.registerLanguage('vbnet', __webpack_require__(267));
-hljs.registerLanguage('vbscript', __webpack_require__(269));
-hljs.registerLanguage('vbscript-html', __webpack_require__(268));
-hljs.registerLanguage('verilog', __webpack_require__(270));
-hljs.registerLanguage('vhdl', __webpack_require__(271));
-hljs.registerLanguage('vim', __webpack_require__(272));
-hljs.registerLanguage('x86asm', __webpack_require__(273));
-hljs.registerLanguage('xl', __webpack_require__(274));
-hljs.registerLanguage('xquery', __webpack_require__(276));
-hljs.registerLanguage('zephir', __webpack_require__(278));
+hljs.registerLanguage('1c', __webpack_require__(106));
+hljs.registerLanguage('abnf', __webpack_require__(107));
+hljs.registerLanguage('accesslog', __webpack_require__(108));
+hljs.registerLanguage('actionscript', __webpack_require__(109));
+hljs.registerLanguage('ada', __webpack_require__(110));
+hljs.registerLanguage('apache', __webpack_require__(111));
+hljs.registerLanguage('applescript', __webpack_require__(112));
+hljs.registerLanguage('cpp', __webpack_require__(136));
+hljs.registerLanguage('arduino', __webpack_require__(113));
+hljs.registerLanguage('armasm', __webpack_require__(114));
+hljs.registerLanguage('xml', __webpack_require__(276));
+hljs.registerLanguage('asciidoc', __webpack_require__(115));
+hljs.registerLanguage('aspectj', __webpack_require__(116));
+hljs.registerLanguage('autohotkey', __webpack_require__(117));
+hljs.registerLanguage('autoit', __webpack_require__(118));
+hljs.registerLanguage('avrasm', __webpack_require__(119));
+hljs.registerLanguage('awk', __webpack_require__(120));
+hljs.registerLanguage('axapta', __webpack_require__(121));
+hljs.registerLanguage('bash', __webpack_require__(122));
+hljs.registerLanguage('basic', __webpack_require__(123));
+hljs.registerLanguage('bnf', __webpack_require__(124));
+hljs.registerLanguage('brainfuck', __webpack_require__(125));
+hljs.registerLanguage('cal', __webpack_require__(126));
+hljs.registerLanguage('capnproto', __webpack_require__(127));
+hljs.registerLanguage('ceylon', __webpack_require__(128));
+hljs.registerLanguage('clean', __webpack_require__(129));
+hljs.registerLanguage('clojure', __webpack_require__(131));
+hljs.registerLanguage('clojure-repl', __webpack_require__(130));
+hljs.registerLanguage('cmake', __webpack_require__(132));
+hljs.registerLanguage('coffeescript', __webpack_require__(133));
+hljs.registerLanguage('coq', __webpack_require__(134));
+hljs.registerLanguage('cos', __webpack_require__(135));
+hljs.registerLanguage('crmsh', __webpack_require__(137));
+hljs.registerLanguage('crystal', __webpack_require__(138));
+hljs.registerLanguage('cs', __webpack_require__(139));
+hljs.registerLanguage('csp', __webpack_require__(140));
+hljs.registerLanguage('css', __webpack_require__(141));
+hljs.registerLanguage('d', __webpack_require__(142));
+hljs.registerLanguage('markdown', __webpack_require__(201));
+hljs.registerLanguage('dart', __webpack_require__(143));
+hljs.registerLanguage('delphi', __webpack_require__(144));
+hljs.registerLanguage('diff', __webpack_require__(145));
+hljs.registerLanguage('django', __webpack_require__(146));
+hljs.registerLanguage('dns', __webpack_require__(147));
+hljs.registerLanguage('dockerfile', __webpack_require__(148));
+hljs.registerLanguage('dos', __webpack_require__(149));
+hljs.registerLanguage('dsconfig', __webpack_require__(150));
+hljs.registerLanguage('dts', __webpack_require__(151));
+hljs.registerLanguage('dust', __webpack_require__(152));
+hljs.registerLanguage('ebnf', __webpack_require__(153));
+hljs.registerLanguage('elixir', __webpack_require__(154));
+hljs.registerLanguage('elm', __webpack_require__(155));
+hljs.registerLanguage('ruby', __webpack_require__(240));
+hljs.registerLanguage('erb', __webpack_require__(156));
+hljs.registerLanguage('erlang-repl', __webpack_require__(157));
+hljs.registerLanguage('erlang', __webpack_require__(158));
+hljs.registerLanguage('excel', __webpack_require__(159));
+hljs.registerLanguage('fix', __webpack_require__(160));
+hljs.registerLanguage('flix', __webpack_require__(161));
+hljs.registerLanguage('fortran', __webpack_require__(162));
+hljs.registerLanguage('fsharp', __webpack_require__(163));
+hljs.registerLanguage('gams', __webpack_require__(164));
+hljs.registerLanguage('gauss', __webpack_require__(165));
+hljs.registerLanguage('gcode', __webpack_require__(166));
+hljs.registerLanguage('gherkin', __webpack_require__(167));
+hljs.registerLanguage('glsl', __webpack_require__(168));
+hljs.registerLanguage('go', __webpack_require__(169));
+hljs.registerLanguage('golo', __webpack_require__(170));
+hljs.registerLanguage('gradle', __webpack_require__(171));
+hljs.registerLanguage('groovy', __webpack_require__(172));
+hljs.registerLanguage('haml', __webpack_require__(173));
+hljs.registerLanguage('handlebars', __webpack_require__(174));
+hljs.registerLanguage('haskell', __webpack_require__(175));
+hljs.registerLanguage('haxe', __webpack_require__(176));
+hljs.registerLanguage('hsp', __webpack_require__(177));
+hljs.registerLanguage('htmlbars', __webpack_require__(178));
+hljs.registerLanguage('http', __webpack_require__(179));
+hljs.registerLanguage('hy', __webpack_require__(180));
+hljs.registerLanguage('inform7', __webpack_require__(181));
+hljs.registerLanguage('ini', __webpack_require__(182));
+hljs.registerLanguage('irpf90', __webpack_require__(183));
+hljs.registerLanguage('java', __webpack_require__(184));
+hljs.registerLanguage('javascript', __webpack_require__(185));
+hljs.registerLanguage('jboss-cli', __webpack_require__(186));
+hljs.registerLanguage('json', __webpack_require__(187));
+hljs.registerLanguage('julia', __webpack_require__(188));
+hljs.registerLanguage('kotlin', __webpack_require__(189));
+hljs.registerLanguage('lasso', __webpack_require__(190));
+hljs.registerLanguage('ldif', __webpack_require__(191));
+hljs.registerLanguage('leaf', __webpack_require__(192));
+hljs.registerLanguage('less', __webpack_require__(193));
+hljs.registerLanguage('lisp', __webpack_require__(194));
+hljs.registerLanguage('livecodeserver', __webpack_require__(195));
+hljs.registerLanguage('livescript', __webpack_require__(196));
+hljs.registerLanguage('llvm', __webpack_require__(197));
+hljs.registerLanguage('lsl', __webpack_require__(198));
+hljs.registerLanguage('lua', __webpack_require__(199));
+hljs.registerLanguage('makefile', __webpack_require__(200));
+hljs.registerLanguage('mathematica', __webpack_require__(202));
+hljs.registerLanguage('matlab', __webpack_require__(203));
+hljs.registerLanguage('maxima', __webpack_require__(204));
+hljs.registerLanguage('mel', __webpack_require__(205));
+hljs.registerLanguage('mercury', __webpack_require__(206));
+hljs.registerLanguage('mipsasm', __webpack_require__(207));
+hljs.registerLanguage('mizar', __webpack_require__(208));
+hljs.registerLanguage('perl', __webpack_require__(222));
+hljs.registerLanguage('mojolicious', __webpack_require__(209));
+hljs.registerLanguage('monkey', __webpack_require__(210));
+hljs.registerLanguage('moonscript', __webpack_require__(211));
+hljs.registerLanguage('n1ql', __webpack_require__(212));
+hljs.registerLanguage('nginx', __webpack_require__(213));
+hljs.registerLanguage('nimrod', __webpack_require__(214));
+hljs.registerLanguage('nix', __webpack_require__(215));
+hljs.registerLanguage('nsis', __webpack_require__(216));
+hljs.registerLanguage('objectivec', __webpack_require__(217));
+hljs.registerLanguage('ocaml', __webpack_require__(218));
+hljs.registerLanguage('openscad', __webpack_require__(219));
+hljs.registerLanguage('oxygene', __webpack_require__(220));
+hljs.registerLanguage('parser3', __webpack_require__(221));
+hljs.registerLanguage('pf', __webpack_require__(223));
+hljs.registerLanguage('php', __webpack_require__(224));
+hljs.registerLanguage('pony', __webpack_require__(225));
+hljs.registerLanguage('powershell', __webpack_require__(226));
+hljs.registerLanguage('processing', __webpack_require__(227));
+hljs.registerLanguage('profile', __webpack_require__(228));
+hljs.registerLanguage('prolog', __webpack_require__(229));
+hljs.registerLanguage('protobuf', __webpack_require__(230));
+hljs.registerLanguage('puppet', __webpack_require__(231));
+hljs.registerLanguage('purebasic', __webpack_require__(232));
+hljs.registerLanguage('python', __webpack_require__(233));
+hljs.registerLanguage('q', __webpack_require__(234));
+hljs.registerLanguage('qml', __webpack_require__(235));
+hljs.registerLanguage('r', __webpack_require__(236));
+hljs.registerLanguage('rib', __webpack_require__(237));
+hljs.registerLanguage('roboconf', __webpack_require__(238));
+hljs.registerLanguage('rsl', __webpack_require__(239));
+hljs.registerLanguage('ruleslanguage', __webpack_require__(241));
+hljs.registerLanguage('rust', __webpack_require__(242));
+hljs.registerLanguage('scala', __webpack_require__(243));
+hljs.registerLanguage('scheme', __webpack_require__(244));
+hljs.registerLanguage('scilab', __webpack_require__(245));
+hljs.registerLanguage('scss', __webpack_require__(246));
+hljs.registerLanguage('shell', __webpack_require__(247));
+hljs.registerLanguage('smali', __webpack_require__(248));
+hljs.registerLanguage('smalltalk', __webpack_require__(249));
+hljs.registerLanguage('sml', __webpack_require__(250));
+hljs.registerLanguage('sqf', __webpack_require__(251));
+hljs.registerLanguage('sql', __webpack_require__(252));
+hljs.registerLanguage('stan', __webpack_require__(253));
+hljs.registerLanguage('stata', __webpack_require__(254));
+hljs.registerLanguage('step21', __webpack_require__(255));
+hljs.registerLanguage('stylus', __webpack_require__(256));
+hljs.registerLanguage('subunit', __webpack_require__(257));
+hljs.registerLanguage('swift', __webpack_require__(258));
+hljs.registerLanguage('taggerscript', __webpack_require__(259));
+hljs.registerLanguage('yaml', __webpack_require__(278));
+hljs.registerLanguage('tap', __webpack_require__(260));
+hljs.registerLanguage('tcl', __webpack_require__(261));
+hljs.registerLanguage('tex', __webpack_require__(262));
+hljs.registerLanguage('thrift', __webpack_require__(263));
+hljs.registerLanguage('tp', __webpack_require__(264));
+hljs.registerLanguage('twig', __webpack_require__(265));
+hljs.registerLanguage('typescript', __webpack_require__(266));
+hljs.registerLanguage('vala', __webpack_require__(267));
+hljs.registerLanguage('vbnet', __webpack_require__(268));
+hljs.registerLanguage('vbscript', __webpack_require__(270));
+hljs.registerLanguage('vbscript-html', __webpack_require__(269));
+hljs.registerLanguage('verilog', __webpack_require__(271));
+hljs.registerLanguage('vhdl', __webpack_require__(272));
+hljs.registerLanguage('vim', __webpack_require__(273));
+hljs.registerLanguage('x86asm', __webpack_require__(274));
+hljs.registerLanguage('xl', __webpack_require__(275));
+hljs.registerLanguage('xquery', __webpack_require__(277));
+hljs.registerLanguage('zephir', __webpack_require__(279));
 
 module.exports = hljs;
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs){
@@ -49376,7 +49464,7 @@ module.exports = function(hljs){
 };
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -49451,7 +49539,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -49493,7 +49581,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -49571,7 +49659,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = // We try to support full Ada2012
@@ -49748,7 +49836,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -49798,7 +49886,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -49888,7 +49976,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -49992,7 +50080,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50088,7 +50176,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50280,7 +50368,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -50429,7 +50517,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50481,7 +50569,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50621,7 +50709,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50687,7 +50775,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50744,7 +50832,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50779,7 +50867,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50858,7 +50946,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -50913,7 +51001,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs){
@@ -50946,7 +51034,7 @@ module.exports = function(hljs){
 };
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs){
@@ -50987,7 +51075,7 @@ module.exports = function(hljs){
 };
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51071,7 +51159,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51124,7 +51212,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51195,7 +51283,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51224,7 +51312,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51243,7 +51331,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51342,7 +51430,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51384,7 +51472,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51534,7 +51622,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51605,7 +51693,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 module.exports = function cos (hljs) {
@@ -51733,7 +51821,7 @@ module.exports = function cos (hljs) {
 };
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -51912,7 +52000,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -52010,7 +52098,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -52191,7 +52279,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -52362,7 +52450,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -52388,7 +52476,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -52497,7 +52585,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports) {
 
 module.exports = /**
@@ -52759,7 +52847,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -52864,7 +52952,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -52937,7 +53025,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -52981,7 +53069,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53049,7 +53137,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53082,7 +53170,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53108,7 +53196,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53164,7 +53252,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53215,7 +53303,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53343,7 +53431,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53379,7 +53467,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53416,7 +53504,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53517,7 +53605,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53605,7 +53693,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53624,7 +53712,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53674,7 +53762,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53824,7 +53912,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53876,7 +53964,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -53909,7 +53997,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -53958,7 +54046,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54033,7 +54121,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54096,7 +54184,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -54254,7 +54342,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54482,7 +54570,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54553,7 +54641,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -54594,7 +54682,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54715,7 +54803,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54773,7 +54861,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54800,7 +54888,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54839,7 +54927,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -54937,7 +55025,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports) {
 
 module.exports = // TODO support filter tags like :javascript, support inline HTML
@@ -55048,7 +55136,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55086,7 +55174,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55212,7 +55300,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55328,7 +55416,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55378,7 +55466,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55453,7 +55541,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55498,7 +55586,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55604,7 +55692,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55665,7 +55753,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55735,7 +55823,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55815,7 +55903,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -55927,7 +56015,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -56102,7 +56190,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -56153,7 +56241,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -56194,7 +56282,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -56376,7 +56464,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -56554,7 +56642,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -56721,7 +56809,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -56748,7 +56836,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports) {
 
 module.exports = function (hljs) {
@@ -56792,7 +56880,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -56936,7 +57024,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57043,7 +57131,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57204,7 +57292,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57357,7 +57445,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57450,7 +57538,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57537,7 +57625,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57607,7 +57695,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57692,7 +57780,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57804,7 +57892,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57866,7 +57954,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -57958,7 +58046,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -58368,7 +58456,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -58597,7 +58685,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -58683,7 +58771,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -58773,7 +58861,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -58796,7 +58884,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -58825,7 +58913,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -58904,7 +58992,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59020,7 +59108,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59093,7 +59181,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59190,7 +59278,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59249,7 +59337,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59302,7 +59390,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59412,7 +59500,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59507,7 +59595,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59582,7 +59670,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59643,7 +59731,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59717,7 +59805,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59769,7 +59857,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59930,7 +60018,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -59986,7 +60074,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60117,7 +60205,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60212,7 +60300,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60297,7 +60385,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60349,7 +60437,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60383,7 +60471,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60475,7 +60563,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60515,7 +60603,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60634,7 +60722,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports) {
 
 module.exports = // Base deafult colors in PB IDE: background: #FFFFDF; foreground: #000000;
@@ -60696,7 +60784,7 @@ function(hljs) {
 };
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60816,7 +60904,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -60843,7 +60931,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61016,7 +61104,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61090,7 +61178,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61121,7 +61209,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61192,7 +61280,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61232,7 +61320,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61413,7 +61501,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61478,7 +61566,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61590,7 +61678,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61709,7 +61797,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61857,7 +61945,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -61915,7 +62003,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62017,7 +62105,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62036,7 +62124,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62096,7 +62184,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62150,7 +62238,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62220,7 +62308,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62595,7 +62683,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62759,7 +62847,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62846,7 +62934,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62888,7 +62976,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -62939,7 +63027,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63397,7 +63485,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63435,7 +63523,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63556,7 +63644,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63604,7 +63692,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63644,7 +63732,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63709,7 +63797,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63775,7 +63863,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63814,7 +63902,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63902,7 +63990,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -63972,7 +64060,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64132,7 +64220,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64186,7 +64274,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64246,7 +64334,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64262,7 +64350,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64305,7 +64393,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64408,7 +64496,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64473,7 +64561,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64583,7 +64671,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64723,7 +64811,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64800,7 +64888,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64907,7 +64995,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -64982,7 +65070,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -65074,7 +65162,7 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports) {
 
 module.exports = function(hljs) {
@@ -65185,20 +65273,11 @@ module.exports = function(hljs) {
 };
 
 /***/ }),
-/* 279 */
-/***/ (function(module, exports) {
-
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/components/advanced/advanced.html';
-var html = "<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">Autocomplete example</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">Using a modified version of <a href='https://github.com/zensh/ui-autocomplete'>zensh/ui-autocomplete</a></h6>\n        <p class=\"card-text\">An example using the <code>te-catcomplete</code>directive applied to the <i>company</i> column. </p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"example\"}' href ng-click='$ctrl.mode.example1 = \"example\"'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"html\"}' href ng-click='$ctrl.mode.example1 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"js\"}' href ng-click='$ctrl.mode.example1 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-if='$ctrl.mode.example1 == \"example\"'>\n        <table class='table' table-editor>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.data'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\" te-catcomplete='$ctrl.companyList'></td> \n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    <div class=\"card-block\" hljs ng-if='$ctrl.mode.example1 == \"html\"'>\n<table class='table' table-editor='catcomplete'>\n    <thead>\n        <th>Given</th>\n        <th>Family</th>\n        <th>Email</th>\n        <th>Company</th>\n        <th>Birthday</th>\n    </thead>\n    <tbody>\n        <tr te-row ng-repeat='row in $ctrl.data'>\n            <td te-cell ng-model=\"row.givenName\"></td>\n            <td te-cell ng-model=\"row.familyName\"></td>\n            <td te-cell ng-model=\"row.email\"></td>\n            <td te-cell ng-model=\"row.company\"></td>\n            <td te-cell ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-if='$ctrl.mode.example1 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor($scope){\n\n        }\n    }\n}\n    </div>\n</div>\n\n\n\n";
-window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
-module.exports = path;
-
-/***/ }),
 /* 280 */
 /***/ (function(module, exports) {
 
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/components/api-documentation/api-documentation.html';
-var html = "<div class=\"card\">\n    <div class=\"card-block text-center\">\n        <h4 class=\"card-title\">Under Construction</h4>\n    </div>\n</div>";
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/components/advanced/advanced.html';
+var html = "<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">Autocomplete example</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">Using a modified version of <a href='https://github.com/zensh/ui-autocomplete'>zensh/ui-autocomplete</a></h6>\n        <p class=\"card-text\">An example using the <code>te-catcomplete</code>directive applied to the <i>company</i> column. </p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"example\"}' href ng-click='$ctrl.mode.example1 = \"example\"'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"html\"}' href ng-click='$ctrl.mode.example1 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"js\"}' href ng-click='$ctrl.mode.example1 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-if='$ctrl.mode.example1 == \"example\"'>\n        <table class='table' table-editor='catcomplete'>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.data'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\" te-catcomplete='$ctrl.companyList'></td> \n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    <div class=\"card-block\" hljs ng-if='$ctrl.mode.example1 == \"html\"'>\n<table class='table' table-editor>\n    <thead>\n        <th>Given</th>\n        <th>Family</th>\n        <th>Email</th>\n        <th>Company</th>\n        <th>Birthday</th>\n    </thead>\n    <tbody>\n        <tr te-row ng-repeat='row in $ctrl.data'>\n            <td te-cell ng-model=\"row.givenName\"></td>\n            <td te-cell ng-model=\"row.familyName\"></td>\n            <td te-cell ng-model=\"row.email\"></td>\n            <td te-cell ng-model=\"row.company\"></td>\n            <td te-cell ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-if='$ctrl.mode.example1 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor($scope){\n\n        }\n    }\n}\n    </div>\n</div>\n\n\n\n";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
@@ -65206,8 +65285,8 @@ module.exports = path;
 /* 281 */
 /***/ (function(module, exports) {
 
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/components/basic/basic.html';
-var html = "\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">Minimal Example</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">The most minimal set-up</h6>\n        <p class=\"card-text\">An example using only the basic directives <code>table-editor</code>, <code>te-row</code> and <code>te-cell</code>. Click a row in the table to start editing, then use the <strong>tab</strong>, <strong>shift-tab</strong>, <strong>arrow up</strong> and <strong>arrow down</strong> keys to navigate through the table.</p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"example\"}' href ng-click='$ctrl.mode.example1 = \"example\"'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"html\"}' href ng-click='$ctrl.mode.example1 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"js\"}' href ng-click='$ctrl.mode.example1 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-show='$ctrl.mode.example1 == \"example\"'>\n        <table class='table' table-editor>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.data'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\"></td>\n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    <div class=\"card-block\" hljs ng-show='$ctrl.mode.example1 == \"html\"'>\n<table class='table' table-editor>\n    <thead>\n        <th>Given</th>\n        <th>Family</th>\n        <th>Email</th>\n        <th>Company</th>\n        <th>Birthday</th>\n    </thead>\n    <tbody>\n        <tr te-row ng-repeat='row in $ctrl.data'>\n            <td te-cell ng-model=\"row.givenName\"></td>\n            <td te-cell ng-model=\"row.familyName\"></td>\n            <td te-cell ng-model=\"row.email\"></td>\n            <td te-cell ng-model=\"row.company\"></td>\n            <td te-cell ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-show='$ctrl.mode.example1 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor(){}\n    }\n}\n    </div>\n</div>\n\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">HTML5 Date and Disabled Cells</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">A bit of common configuration</h6>\n        <p class=\"card-text\">An example demonstrating how certain fields can be made static while others remain editable, and showing how to use the supported HTML5 date type. The additional directives used are <code>te-cell-active</code> and  <code>te-cell-options</code>. In this example, the third row is picked out by programmatically setting <code>te-cell-active</code> to <code>false</code> by checking for <code>row.givenName != 'Aloysius'</code>, and the entire Company column is disabled by hardcoding the same directive to <code>false</code>. For the HTML5 Date support only works when providing <code>ng-model</code> with a <code>Date</code> object, as shown in the JavaScript.</p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example2 == \"example\"}' href ng-click='$ctrl.mode.example2 = \"example\"; $event.preventDefault()'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example2 == \"html\"}' href ng-click='$ctrl.mode.example2 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example2 == \"js\"}' href ng-click='$ctrl.mode.example2 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-show='$ctrl.mode.example2 == \"example\"'>\n        <table class='table' table-editor=\"disabled-cells\">\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.secondExample' ng-class=\"{disabled: row.givenName == 'Aloysius'}\">\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.givenName\"></td>\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.familyName\"></td>\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.email\"></td>\n                    <td te-cell te-cell-active='false' ng-model=\"row.company\" class='disabled'></td>\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' te-cell-options='{\"inputAttributes\": {\"type\": \"date\"}}' ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    <div class=\"card-block\" hljs ng-show='$ctrl.mode.example2 == \"html\"'>\n<table class='table' table-editor>\n    <thead>\n        <tr>\n            <th>Given</th>\n            <th>Family</th>\n            <th>Email</th>\n            <th>Company</th>\n            <th>Birthday</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr te-row ng-repeat='row in $ctrl.data' ng-class=\"{disabled: row.givenName == 'Aloysius'}\">\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.givenName\"></td>\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.familyName\"></td>\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.email\"></td>\n            <td te-cell te-cell-active='false' ng-model=\"row.company\" class='disabled'></td>\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' te-cell-options='{inputAttributes: {type: 'date'}}' ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-show='$ctrl.mode.example2 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor(){}\n\n        $onInit{\n            this.data = this.data.map( row = {\n                row.birthday = new Date(row.birthday)\n                return row\n            })\n        }\n    }\n}\n    </div>\n</div>\n\n\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">teRowChange Callback Example</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">Handling data when involved when switching rows</h6>\n        <p class=\"card-text\">An example demonstrating how to use the <code>te-row-change</code> directive on the <code>tr</code> element. Note that it requires the <code>te-row-context</code> directive on <code>tr</code> elements. Select a row to go into editor mode, then navigate through the table using the (shift-) tab, arrow up and arrow down keys. Open te developers console to see the callback.</p>\n    </div>\n</div>\n<div class=\"card\" style='margin-bottom:4em'>\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example3 == \"example\"}' href ng-click='$ctrl.mode.example3 = \"example\"; $event.preventDefault()'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example3 == \"html\"}' href ng-click='$ctrl.mode.example3 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example3 == \"js\"}' href ng-click='$ctrl.mode.example3 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-show='$ctrl.mode.example3 == \"example\"'>\n        <table class='table' table-editor='advanced-example-two' te-row-change='$ctrl.rowChangeHandler(args)'>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row te-row-context='{row: row, random: $ctrl.randomNumber() }' ng-repeat='row in $ctrl.thirdExample'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\"></td>\n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n        <div class='row text-center'>\n            <div class='col-12'><b>Check out the developers console to see the arguments of the callback being logged</b></div>\n        </div>\n    </div>\n    <div class=\"card-block\" hljs ng-show='$ctrl.mode.example3 == \"html\"'>\n<table class='table' table-editor te-row-change='$ctrl.rowChangeHandler(args)'>\n    <thead>\n        <tr>\n            <th>Given</th>\n            <th>Family</th>\n            <th>Email</th>\n            <th>Company</th>\n            <th>Birthday</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr te-row te-row-context='{row: row, random: $ctrl.randomNumber() }' ng-repeat='row in $ctrl.data'>\n            <td te-cell ng-model=\"row.givenName\"></td>\n            <td te-cell ng-model=\"row.familyName\"></td>\n            <td te-cell ng-model=\"row.email\"></td>\n            <td te-cell ng-model=\"row.company\"></td>\n            <td te-cell ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-show='$ctrl.mode.example3 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor(){}\n\n        rowChangeHandler(args){\n            console.info('rowChangeHandler fired')\n            console.info(args)\n        }\n\n        randomNumber(){\n            return Math.random();\n        }\n    }\n}\n    </div>\n</div>\n\n\n\n\n";
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/components/api-documentation/api-documentation.html';
+var html = "<div class=\"card\">\n    <div class=\"card-block text-center\">\n        <h4 class=\"card-title\">Under Construction</h4>\n    </div>\n</div>";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
@@ -65215,8 +65294,8 @@ module.exports = path;
 /* 282 */
 /***/ (function(module, exports) {
 
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/components/customization/customization.html';
-var html = "<div class=\"card\">\n    <div class=\"card-block text-center\">\n        <h4 class=\"card-title\">Under Construction</h4>\n    </div>\n</div>";
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/components/basic/basic.html';
+var html = "\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">Minimal Example</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">The most minimal set-up</h6>\n        <p class=\"card-text\">An example using only the basic directives <code>table-editor</code>, <code>te-row</code> and <code>te-cell</code>. Click a row in the table to start editing, then use the <strong>tab</strong>, <strong>shift-tab</strong>, <strong>arrow up</strong> and <strong>arrow down</strong> keys to navigate through the table.</p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"example\"}' href ng-click='$ctrl.mode.example1 = \"example\"'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"html\"}' href ng-click='$ctrl.mode.example1 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example1 == \"js\"}' href ng-click='$ctrl.mode.example1 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-show='$ctrl.mode.example1 == \"example\"'>\n        <table class='table' table-editor>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.data'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\"></td>\n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    <div class=\"card-block\" hljs ng-show='$ctrl.mode.example1 == \"html\"'>\n<table class='table' table-editor>\n    <thead>\n        <th>Given</th>\n        <th>Family</th>\n        <th>Email</th>\n        <th>Company</th>\n        <th>Birthday</th>\n    </thead>\n    <tbody>\n        <tr te-row ng-repeat='row in $ctrl.data'>\n            <td te-cell ng-model=\"row.givenName\"></td>\n            <td te-cell ng-model=\"row.familyName\"></td>\n            <td te-cell ng-model=\"row.email\"></td>\n            <td te-cell ng-model=\"row.company\"></td>\n            <td te-cell ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-show='$ctrl.mode.example1 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor(){}\n    }\n}\n    </div>\n</div>\n\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">HTML5 Date and Disabled Cells</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">A bit of common configuration</h6>\n        <p class=\"card-text\">An example demonstrating how certain fields can be made static while others remain editable, and showing how to use the supported HTML5 date type. The additional directives used are <code>te-cell-active</code> and  <code>te-cell-options</code>. In this example, the third row is picked out by programmatically setting <code>te-cell-active</code> to <code>false</code> by checking for <code>row.givenName != 'Aloysius'</code>, and the entire Company column is disabled by hardcoding the same directive to <code>false</code>. For the HTML5 Date support only works when providing <code>ng-model</code> with a <code>Date</code> object, as shown in the JavaScript.</p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example2 == \"example\"}' href ng-click='$ctrl.mode.example2 = \"example\"; $event.preventDefault()'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example2 == \"html\"}' href ng-click='$ctrl.mode.example2 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example2 == \"js\"}' href ng-click='$ctrl.mode.example2 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-show='$ctrl.mode.example2 == \"example\"'>\n        <table class='table' table-editor=\"disabled-cells\">\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.secondExample' ng-class=\"{disabled: row.givenName == 'Aloysius'}\">\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.givenName\"></td>\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.familyName\"></td>\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.email\"></td>\n                    <td te-cell te-cell-active='false' ng-model=\"row.company\" class='disabled'></td>\n                    <td te-cell te-cell-active='row.givenName != \"Aloysius\"' te-cell-options='{\"inputAttributes\": {\"type\": \"date\"}}' ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    <div class=\"card-block\" hljs ng-show='$ctrl.mode.example2 == \"html\"'>\n<table class='table' table-editor>\n    <thead>\n        <tr>\n            <th>Given</th>\n            <th>Family</th>\n            <th>Email</th>\n            <th>Company</th>\n            <th>Birthday</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr te-row ng-repeat='row in $ctrl.data' ng-class=\"{disabled: row.givenName == 'Aloysius'}\">\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.givenName\"></td>\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.familyName\"></td>\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' ng-model=\"row.email\"></td>\n            <td te-cell te-cell-active='false' ng-model=\"row.company\" class='disabled'></td>\n            <td te-cell te-cell-active='row.givenName != \"Aloysius\"' te-cell-options='{inputAttributes: {type: 'date'}}' ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-show='$ctrl.mode.example2 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor(){}\n\n        $onInit{\n            this.data = this.data.map( row = {\n                row.birthday = new Date(row.birthday)\n                return row\n            })\n        }\n    }\n}\n    </div>\n</div>\n\n\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">teRowChange Callback Example</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">Handling data when involved when switching rows</h6>\n        <p class=\"card-text\">An example demonstrating how to use the <code>te-row-change</code> directive on the <code>tr</code> element. Note that it requires the <code>te-row-context</code> directive on <code>tr</code> elements. Select a row to go into editor mode, then navigate through the table using the (shift-) tab, arrow up and arrow down keys. Open te developers console to see the callback.</p>\n    </div>\n</div>\n<div class=\"card\" style='margin-bottom:4em'>\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example3 == \"example\"}' href ng-click='$ctrl.mode.example3 = \"example\"; $event.preventDefault()'>Example</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example3 == \"html\"}' href ng-click='$ctrl.mode.example3 = \"html\"'>HTML</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ng-class='{\"active\": $ctrl.mode.example3 == \"js\"}' href ng-click='$ctrl.mode.example3 = \"js\"'>JS</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\" ng-show='$ctrl.mode.example3 == \"example\"'>\n        <table class='table' table-editor='advanced-example-two' te-row-change='$ctrl.rowChangeHandler(args)'>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row te-row-context='{row: row, random: $ctrl.randomNumber() }' ng-repeat='row in $ctrl.thirdExample'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\"></td>\n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n        <div class='row text-center'>\n            <div class='col-12'><b>Check out the developers console to see the arguments of the callback being logged</b></div>\n        </div>\n    </div>\n    <div class=\"card-block\" hljs ng-show='$ctrl.mode.example3 == \"html\"'>\n<table class='table' table-editor te-row-change='$ctrl.rowChangeHandler(args)'>\n    <thead>\n        <tr>\n            <th>Given</th>\n            <th>Family</th>\n            <th>Email</th>\n            <th>Company</th>\n            <th>Birthday</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr te-row te-row-context='{row: row, random: $ctrl.randomNumber() }' ng-repeat='row in $ctrl.data'>\n            <td te-cell ng-model=\"row.givenName\"></td>\n            <td te-cell ng-model=\"row.familyName\"></td>\n            <td te-cell ng-model=\"row.email\"></td>\n            <td te-cell ng-model=\"row.company\"></td>\n            <td te-cell ng-model=\"row.birthday\"></td>\n        </tr>\n    </tbody>\n</table>\n    </div>\n    <div class=\"card-block\" hljs hljs-no-escape ng-show='$ctrl.mode.example3 == \"js\"'>\nconst basicComponent = {\n    bindings: {\n        data: '<',\n    },\n    templateUrl: templateUrl,\n    controller: class {\n\n        constructor(){}\n\n        rowChangeHandler(args){\n            console.info('rowChangeHandler fired')\n            console.info(args)\n        }\n\n        randomNumber(){\n            return Math.random();\n        }\n    }\n}\n    </div>\n</div>\n\n\n\n\n";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
@@ -65224,8 +65303,8 @@ module.exports = path;
 /* 283 */
 /***/ (function(module, exports) {
 
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/components/many-records/many-records.html';
-var html = "\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">Many records</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">A performance test. Poke around with the memory profiler</h6>\n        <p class=\"card-text\">Contains 500 records.</p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" class='active'>Example</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\">\n        <table class='table' table-editor>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.data'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\"></td>\n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n";
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/components/customization/customization.html';
+var html = "<div class=\"card\">\n    <div class=\"card-block text-center\">\n        <h4 class=\"card-title\">Under Construction</h4>\n    </div>\n</div>";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
@@ -65233,8 +65312,8 @@ module.exports = path;
 /* 284 */
 /***/ (function(module, exports) {
 
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/components/non-trivial/non-trivial.html';
-var html = "<div class=\"card\">\n    <div class=\"card-block text-center\">\n        <h4 class=\"card-title\">Under Construction</h4>\n    </div>\n</div>";
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/components/many-records/many-records.html';
+var html = "\n<div class=\"card\">\n    <div class=\"card-block\">\n        <h4 class=\"card-title\">Many records</h4>\n        <h6 class=\"card-subtitle mb-2 text-muted\">A performance test. Poke around with the memory profiler</h6>\n        <p class=\"card-text\">Contains 500 records.</p>\n    </div>\n</div>\n<div class=\"card\">\n    <div class=\"card-header\">\n        <ul class=\"nav nav-tabs card-header-tabs\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" class='active'>Example</a>\n            </li>\n        </ul>\n    </div>\n    <div class=\"card-block\">\n        <table class='table' table-editor>\n            <thead>\n                <tr>\n                    <th>Given</th>\n                    <th>Family</th>\n                    <th>Email</th>\n                    <th>Company</th>\n                    <th>Birthday</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr te-row ng-repeat='row in $ctrl.data'>\n                    <td te-cell ng-model=\"row.givenName\"></td>\n                    <td te-cell ng-model=\"row.familyName\"></td>\n                    <td te-cell ng-model=\"row.email\"></td>\n                    <td te-cell ng-model=\"row.company\"></td>\n                    <td te-cell ng-model=\"row.birthday\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
@@ -65242,7 +65321,7 @@ module.exports = path;
 /* 285 */
 /***/ (function(module, exports) {
 
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/components/validations/validations.html';
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/components/non-trivial/non-trivial.html';
 var html = "<div class=\"card\">\n    <div class=\"card-block text-center\">\n        <h4 class=\"card-title\">Under Construction</h4>\n    </div>\n</div>";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
@@ -65251,19 +65330,28 @@ module.exports = path;
 /* 286 */
 /***/ (function(module, exports) {
 
-var path = '/Users/Moeys/Code/angular-table-editor/package/demo/src/demo.html';
-var html = "<nav class=\"navbar navbar-toggleable-md navbar-light bg-faded\">\n    <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <a class=\"navbar-brand\"><h3>ngTableEditor</h3></a>\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" ui-sref=\"demo\">Getting Started</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.api-documentation\">API Documentation</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.basic\">Basic</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.many-records\">Many Records</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.advanced\">Advanced</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.validations\">With Validations</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.customization\">With Customization</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.non-trivial\">Non Trivial</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n<div class=\"container\" ui-view>\n    <div class=\"jumbotron\">\n        <h1>ngTableEditor</h1>\n        <p class=\"lead\"> A soon-to-be fully tested, lightweight AngularJS library that transform dull HTML tables into dynamic editable components.</p>\n         <p class=\"lead\"><b> This project page is still under construction, and so is the package itself. The API may and probably will change in the near future.</b></p>\n         <p class=\"lead\"><b>The following examples are live: <a ui-sref=\"demo.basic\">Basic</a>, <a ui-sref=\"demo.many-records\">Many Records</a> and  <a ui-sref=\"demo.advanced\">Advanced</a>.</p>\n        <!-- <a class=\"btn btn-lg btn-primary\" href=\"#\" role=\"button\">Download</a> -->\n    </div>\n<!--     <div class=\"card\">\n        <div class=\"card-block\">\n            <h4 class=\"card-title\">Card title</h4>\n            <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>\n            <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n            <a href=\"#\" class=\"card-link\">Card link</a>\n            <a href=\"#\" class=\"card-link\">Another link</a>\n        </div>\n    </div> -->\n</div>\n";
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/components/validations/validations.html';
+var html = "<div class=\"card\">\n    <div class=\"card-block text-center\">\n        <h4 class=\"card-title\">Under Construction</h4>\n    </div>\n</div>";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
 /***/ }),
 /* 287 */
+/***/ (function(module, exports) {
+
+var path = '/Users/Moeys/Code/angular-table-editor/core/demo/src/demo.html';
+var html = "<nav class=\"navbar navbar-toggleable-md navbar-light bg-faded\">\n    <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <a class=\"navbar-brand\"><h3>ngTableEditor</h3></a>\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" ui-sref=\"demo\">Getting Started</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.api-documentation\">API Documentation</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.basic\">Basic</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.many-records\">Many Records</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.advanced\">Advanced</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.validations\">With Validations</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.customization\">With Customization</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" ui-sref=\"demo.non-trivial\">Non Trivial</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n<div class=\"container\" ui-view>\n    <div class=\"jumbotron\">\n        <h1>ngTableEditor</h1>\n        <p class=\"lead\"> A soon-to-be fully tested, lightweight AngularJS library that transform dull HTML tables into dynamic editable components.</p>\n         <p class=\"lead\"><b> This project page is still under construction, and so is the package itself. The API may and probably will change in the near future.</b></p>\n         <p class=\"lead\"><b>The following examples are live: <a ui-sref=\"demo.basic\">Basic</a>, <a ui-sref=\"demo.many-records\">Many Records</a> and  <a ui-sref=\"demo.advanced\">Advanced</a>.</p>\n    </div>\n</div>\n";
+window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
+module.exports = path;
+
+/***/ }),
+/* 288 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__advanced_scss__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__advanced_scss__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__advanced_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__advanced_scss__);
-const templateUrl = __webpack_require__(279);
+const templateUrl = __webpack_require__(280);
 
 
 const advancedComponent = {
@@ -65304,6 +65392,7 @@ const advancedComponent = {
         generateOptions(args) {
             const acOptions = {
                 options: {
+                    tableEditorName: "catcomplete",
                     currSource: [],
                     html: true,
                     onlySelectValid: true,
@@ -65324,7 +65413,6 @@ const advancedComponent = {
                         acOptions.options.currSource = currSource
                         response(currSource);
                     },
-
                 },
                 methods: {}
             };
@@ -65342,7 +65430,7 @@ const advancedComponent = {
 
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65350,7 +65438,7 @@ const advancedComponent = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__advanced_component__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__advanced_component__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_js__ = __webpack_require__(10);
 
 
@@ -65385,13 +65473,13 @@ const advancedComponent = {
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_documentation_scss__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_documentation_scss__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_documentation_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__api_documentation_scss__);
-const templateUrl = __webpack_require__(280);
+const templateUrl = __webpack_require__(281);
 
 
 const apiDocumentationComponent = {
@@ -65404,7 +65492,7 @@ const apiDocumentationComponent = {
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65412,7 +65500,7 @@ const apiDocumentationComponent = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_documentation_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_documentation_component__ = __webpack_require__(290);
 
 
 
@@ -65440,13 +65528,13 @@ const apiDocumentationComponent = {
 
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basic_scss__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basic_scss__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basic_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__basic_scss__);
-const templateUrl = __webpack_require__(281);
+const templateUrl = __webpack_require__(282);
 
 
 const basicComponent = {
@@ -65490,7 +65578,7 @@ const basicComponent = {
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65498,7 +65586,7 @@ const basicComponent = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__basic_component__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__basic_component__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_js__ = __webpack_require__(10);
 
 
@@ -65532,13 +65620,13 @@ const basicComponent = {
 
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__customization_scss__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__customization_scss__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__customization_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__customization_scss__);
-const templateUrl = __webpack_require__(282);
+const templateUrl = __webpack_require__(283);
 
 
 
@@ -65552,7 +65640,7 @@ const customizationComponent = {
 
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65560,7 +65648,7 @@ const customizationComponent = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customization_component__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customization_component__ = __webpack_require__(294);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_js__ = __webpack_require__(10);
 
 
@@ -65594,13 +65682,13 @@ const customizationComponent = {
 
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__many_records_scss__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__many_records_scss__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__many_records_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__many_records_scss__);
-const templateUrl = __webpack_require__(283);
+const templateUrl = __webpack_require__(284);
 
 
 const manyRecordsComponent = {
@@ -65637,7 +65725,7 @@ const manyRecordsComponent = {
 
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65645,7 +65733,7 @@ const manyRecordsComponent = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__many_records_component__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__many_records_component__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_js__ = __webpack_require__(10);
 
 
@@ -65679,13 +65767,13 @@ const manyRecordsComponent = {
 
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__non_trivial_scss__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__non_trivial_scss__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__non_trivial_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__non_trivial_scss__);
-const templateUrl = __webpack_require__(284);
+const templateUrl = __webpack_require__(285);
 
 
 const nonTrivialComponent = {
@@ -65698,7 +65786,7 @@ const nonTrivialComponent = {
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65706,7 +65794,7 @@ const nonTrivialComponent = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__non_trivial_component__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__non_trivial_component__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_js__ = __webpack_require__(10);
 
 
@@ -65741,13 +65829,13 @@ const nonTrivialComponent = {
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__validations_scss__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__validations_scss__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__validations_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__validations_scss__);
-const templateUrl = __webpack_require__(285);
+const templateUrl = __webpack_require__(286);
 
 
 const validationsComponent = {
@@ -65760,7 +65848,7 @@ const validationsComponent = {
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65768,7 +65856,7 @@ const validationsComponent = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validations_component__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validations_component__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_js__ = __webpack_require__(10);
 
 
@@ -65803,7 +65891,7 @@ const validationsComponent = {
 
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65814,12 +65902,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_highlightjs__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_highlightjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_highlightjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_angular_table_editor_js__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_angular_table_editor_js__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_angular_table_editor_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__lib_angular_table_editor_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_messages__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__demo_component__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_components_module__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_table_editor_cat_complete__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_table_editor_cat_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_table_editor_cat_complete__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__demo_component__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_components_module__ = __webpack_require__(63);
 
 
 
@@ -65836,10 +65926,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     .module('demo', [
         __WEBPACK_IMPORTED_MODULE_1__uirouter_angularjs___default.a,
         __WEBPACK_IMPORTED_MODULE_3__lib_angular_table_editor_js___default.a,
-        __WEBPACK_IMPORTED_MODULE_6__components_components_module__["a" /* default */],
-        __WEBPACK_IMPORTED_MODULE_2_angular_highlightjs___default.a
+        __WEBPACK_IMPORTED_MODULE_7__components_components_module__["a" /* default */],
+        __WEBPACK_IMPORTED_MODULE_2_angular_highlightjs___default.a,
+        __WEBPACK_IMPORTED_MODULE_5_angular_table_editor_cat_complete___default.a
     ])
-    .component('demo', __WEBPACK_IMPORTED_MODULE_5__demo_component__["a" /* default */])
+    .component('demo', __WEBPACK_IMPORTED_MODULE_6__demo_component__["a" /* default */])
     .config(($stateProvider) => {
         $stateProvider
             .state('demo', {

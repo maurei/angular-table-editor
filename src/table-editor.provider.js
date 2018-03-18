@@ -1,6 +1,5 @@
 function TableEditorProvider() {
 
-
     class TableEditor {
 
         static get registry() {
@@ -97,6 +96,7 @@ function TableEditorProvider() {
     };
 
     TableEditorRegistry.$get.registerTableEditor = TableEditorRegistry.registerTableEditor
+    TableEditorRegistry.$get.setCatCompleteLoadedState = (value) => TableEditor.catCompleteLoaded = value
 
     TableEditorRegistry.configs = {
         unnamed: TableEditorRegistry.defaultConfig,

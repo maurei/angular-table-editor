@@ -4,7 +4,7 @@ import hljs from 'angular-highlightjs'
 import ngTableEditor from '../../lib/angular-table-editor.js'
 import ngMessages from 'angular-messages';
 
-
+import teCatcomplete from 'angular-table-editor-cat-complete'
 
 import demoComponent from './demo.component';
 import components from './components/components.module'
@@ -15,7 +15,8 @@ export default angular
         uiRouter,
         ngTableEditor,
         components,
-        hljs
+        hljs,
+        teCatcomplete
     ])
     .component('demo', demoComponent)
     .config(($stateProvider) => {

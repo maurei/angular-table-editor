@@ -10,13 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@rbarilani/remove-source-map-url-webpack-plugin": "0.1.0-alpha",
     "@uirouter/angularjs": "^1.0.3",
     "angular": "^1.6.4",
     "angular-animate": "^1.6.1",
     "angular-bootstrap-datetimepicker": "^1.1.4",
     "angular-elastic-input": "^2.4.0",
+    "angular-highlightjs": "^0.7.1",
     "angular-hotkeys": "^1.7.0",
     "angular-messages": "^1.6.4",
+    "angular-table-editor-cat-complete": "0.0.3",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-loader": "^0.4.5",
@@ -25,10 +28,6 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.17.0",
-    "webpack": "^2.4.1",
-    "@rbarilani/remove-source-map-url-webpack-plugin": "0.1.0-alpha"
-  },
-  "devDependencies": {
-    "angular-highlightjs": "^0.7.1"
+    "webpack": "^2.4.1"
   }
 }

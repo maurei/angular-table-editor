@@ -61,6 +61,7 @@ class teCellDirective {
         // which is the actual item object. We must return that rather than val, which is just the viewValue i.e. the label in the inputfield. 
         // $formatters: the label we're putting in must be on the catcomplete choice object on attribute "label".
         if ($scope.teCatcomplete) {
+            if (!tableEditor.constructor.catCompleteLoaded) throw Error("The optional ngTableEditor.catcomplete module must be loaded in order to use the te-catcomplete directive.")
             ngModel.$parsers.push(val => {
                 return $scope.$$childHead.teCell  // hijacking $parpers pipeline, see my answer to this SO question: https://stackoverflow.com/questions/35309114/set-model-value-programmatically-in-angular-js/44071623#44071623
             })
@@ -224,7 +225,8 @@ class teCellDirective {
 
         $scope.$ctrl.$$inputInitialized = false;
         $scope.$ctrl.$active = false;
-        $$read($scope.$$childHead)
+        //if ($scope.$$childHead.teCell && $scope.$$childHead.teCell.dummy === null) debugger;
+        $$read($scope.$$childHead) // this is triggering $destroy when allowEmpty case is triggered (when teCatComplete)
         $scope.$$childHead.$destroy();
         element.empty();
         ngModel.$render()

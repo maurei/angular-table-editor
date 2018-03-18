@@ -39,6 +39,7 @@ const advancedComponent = {
         generateOptions(args) {
             const acOptions = {
                 options: {
+                    tableEditorName: "catcomplete",
                     currSource: [],
                     html: true,
                     onlySelectValid: true,
@@ -59,7 +60,6 @@ const advancedComponent = {
                         acOptions.options.currSource = currSource
                         response(currSource);
                     },
-
                 },
                 methods: {}
             };

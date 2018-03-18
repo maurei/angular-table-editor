@@ -2,13 +2,13 @@ class tableEditorDirective {
 
 
 
-
-    constructor(tableEditor, $rootScope, $timeout) {
+    constructor(tableEditor, $rootScope, $timeout, $injector ) {
         $(window).on('click', () => $rootScope.$broadcast('teClick'))
         this.restrict = "A";
         this.scope = { teRowChange: '&' };
         this.controllerAs = '$tableEditorCtrl'
         this.link = this.link.bind(this, tableEditor, $rootScope, $timeout)
+        tableEditor.setCatCompleteLoadedState($injector.modules['mrei.ngTableEditor.catcomplete'] ? true : false)
     }
 
 
