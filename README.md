@@ -1,6 +1,8 @@
 # Angular Table Editor 
 
-**Note: This package is still under construction, more advanced usage may come with bugs. Check out the documentation to see which parts are solid and which are less solid**
+**
+
+** This project has been ported to Angular 2+ and is not being maintained (nor was it even ever finished). Check out [@ngx-table-editor](https://github.com/maurei/ngx-table-editor).**
 
 ---
 #### AngularJS library that transforms dull HTML tables into dynamic editable components

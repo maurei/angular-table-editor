@@ -122,8 +122,10 @@ class tableEditorDirective {
 
                 const prevTbody = $rowCtrl.$$element.closest('tbody').prevAll('tbody')
                 if (Number.isNaN(prevRowIdx) && prevTbody.length) {
+                    let targetTbody;
                     for (let i = 0; i < prevTbody.length; i++) {
-                        prevRowIdx = parseInt($rowCtrl.$$element.closest('tbody').prev('tbody').find('tr[te-row]').last().attr('te-idx'))
+                        targetTbody = prevTbody.eq(i);
+                        prevRowIdx = parseInt(targetTbody.find('tr[te-row]').last().attr('te-idx'))
                         if (Number.isInteger(prevRowIdx) && prevRowIdx > -1) break
                     }
                 }
